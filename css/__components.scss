@@ -1,0 +1,13 @@
+header {
+    .headerContainer {
+        &__logo {
+            i {
+                display: inline-block;
+                width: 15%;
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

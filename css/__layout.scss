@@ -1,0 +1,84 @@
+body {
+    @include bodyStyles;
+
+    header {
+        @include headerStyles;
+
+        .headerContainer {
+            @include headerContainer;
+
+            &__logo {
+                @include headerContainerLogo;
+
+                h1 {
+                    @include h1Logo;
+                }
+            }
+
+            &__menu {
+                @include headerContainersGral(27%, 1vw);
+
+                ul {
+                    @include headerUlStyle(center);
+
+                    li {
+                        @include headerUlLiStyle(0.3rem, 1.2vw, 3rem);
+                    }
+                }
+            }
+
+            &__search {
+                @include headerContainersGral(22%, 1vw);
+
+
+                #searchText {
+                    @include searchText;
+                }
+
+                .searchButton {
+                    @include searchButton;
+                }
+            }
+
+            &__session {
+                @include headerContainersGral(24%, 1vw);
+
+                ul {
+                    @include headerUlStyle(space-evenly);
+
+                    li {
+                        @include headerUlLiStyle(0.3rem, 1.2vw, 3rem);
+                    }
+                }
+            }
+        }
+
+    }
+
+    main {
+        .freeShows {
+            &__title {
+                margin-top: 4vw;
+                margin-bottom: 1vw;
+
+                h3 {
+                    @include headerUlLiStyle(0.3rem, 1.8vw, 3rem);
+                }
+            }
+
+            &__container {
+                display: flex;
+                padding: 1vw;
+                border: 1px solid white;
+                overflow-y: hidden;
+
+                &--item{
+                    padding: 1vw;
+                    .itemCover {
+                        width: 210px;
+                    }
+                }
+            }
+        }
+    }
+}

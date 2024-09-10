@@ -1,0 +1,125 @@
+body {
+  background-color: #000000;
+  padding: 1vw 2vw;
+}
+body header {
+  height: 30vw;
+  background-image: url("/img/banner-images/movie-banner.jpg");
+  background-repeat: no-repeat;
+  background-position-y: 3%;
+  background-size: 100%;
+  box-shadow: inset 0px 200px 69px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 1vw;
+}
+body header .headerContainer {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  justify-content: space-evenly;
+  background-color: transparent;
+}
+body header .headerContainer__logo {
+  display: flex;
+  flex-direction: row;
+  padding: 1vw;
+  width: calc(35% - 1vw);
+  flex: 1;
+}
+body header .headerContainer__logo h1 {
+  font-family: "Bebas Neue", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: clamp(0.5rem, 3vw, 5rem);
+  align-content: center;
+  padding: 2vw;
+  color: white;
+}
+body header .headerContainer__menu {
+  padding: 1vw;
+  display: flex;
+  width: calc(27% - 1vw);
+  box-sizing: border-box;
+}
+body header .headerContainer__menu ul {
+  display: flex;
+  justify-content: center;
+  gap: 1.5vw;
+  flex: 1;
+}
+body header .headerContainer__menu ul li {
+  cursor: pointer;
+  font-family: "Quicksand", "Courier New", Courier, monospace;
+  font-weight: 600;
+  font-size: clamp(0.3rem, 1.2vw, 3rem);
+  color: white;
+}
+body header .headerContainer__search {
+  padding: 1vw;
+  display: flex;
+  width: calc(22% - 1vw);
+  box-sizing: border-box;
+}
+body header .headerContainer__search #searchText {
+  border-radius: 50px;
+  padding: 7%;
+  width: 100%;
+  height: 1rem;
+  background-color: transparent;
+  font-size: clamp(0.3rem, 1.2vw, 3rem);
+  box-sizing: border-box;
+  border: 0.1vw solid white;
+}
+body header .headerContainer__search .searchButton {
+  width: 10%;
+  position: relative;
+  right: 14.5%;
+  bottom: 87%;
+}
+body header .headerContainer__session {
+  padding: 1vw;
+  display: flex;
+  width: calc(24% - 1vw);
+  box-sizing: border-box;
+}
+body header .headerContainer__session ul {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 1.5vw;
+  flex: 1;
+}
+body header .headerContainer__session ul li {
+  cursor: pointer;
+  font-family: "Quicksand", "Courier New", Courier, monospace;
+  font-weight: 600;
+  font-size: clamp(0.3rem, 1.2vw, 3rem);
+  color: white;
+}
+body main .freeShows__title {
+  margin-top: 4vw;
+  margin-bottom: 1vw;
+}
+body main .freeShows__title h3 {
+  cursor: pointer;
+  font-family: "Quicksand", "Courier New", Courier, monospace;
+  font-weight: 600;
+  font-size: clamp(0.3rem, 1.8vw, 3rem);
+  color: white;
+}
+body main .freeShows__container {
+  display: flex;
+  padding: 1vw;
+  border: 1px solid white;
+  overflow-y: hidden;
+}
+body main .freeShows__container--item {
+  padding: 1vw;
+}
+body main .freeShows__container--item .itemCover {
+  width: 210px;
+}
+
+header .headerContainer__logo i {
+  display: inline-block;
+  width: 15%;
+}
+header .headerContainer__logo i img {
+  width: 100%;
+}/*# sourceMappingURL=styles.css.map */
