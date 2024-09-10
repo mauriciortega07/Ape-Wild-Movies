@@ -106,7 +106,6 @@ body main .freeShows__title h3 {
 body main .freeShows__container {
   display: flex;
   padding: 1vw;
-  border: 1px solid white;
   overflow-y: hidden;
 }
 body main .freeShows__container--item {

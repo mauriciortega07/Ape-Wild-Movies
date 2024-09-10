@@ -1,35 +1,35 @@
 
 const createShowContainerItem = (item) => {
+    console.log(item.image.medium)
     const containerItem = document.createElement("div");
     containerItem.classList.add("freeShows__container--item");
 
     const showsCover = document.createElement("img");
     showsCover.classList.add("itemCover");
-    showsCover.src = item.image.medium;
+    showsCover.src = item.image.original;
     showsCover.alt = item.name;
 
-    const showsName = document.createElement("h1");
-    showsName.innerHTML = item.name
-    
     containerItem.appendChild(showsCover);
-    containerItem.appendChild(showsName);
-    
+  
     return containerItem;
 };
 
 
 const loadShows = async () => {
-    const showsGrid = document.getElementsByClassName("freeShows__container");
+    const showsGrid = document.querySelector(".freeShows__container");
     try {
         const response = await axios.get("https://api.tvmaze.com/shows");
         const shows = response.data;
         shows.length = 10;
+        console.log(shows);
 
-        showsGrid.innerHTML= '';
-        
+        showsGrid.innerHTML = '';
+
         for (const item of shows) {
             console.log(item);
-            const detailsResponse = await axios.get(item.url);
+            //console.log(item)
+            const detailsResponse = await axios.get(item._links.self.href);
+            console.log(detailsResponse);
             const showCard = createShowContainerItem(detailsResponse.data);
             showsGrid.appendChild(showCard);
         }
