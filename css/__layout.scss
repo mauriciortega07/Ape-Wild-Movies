@@ -69,15 +69,101 @@ body {
             &__container {
                 display: flex;
                 padding: 1vw;
-               
+
                 overflow-y: hidden;
 
-                &--item{
+                &--item {
                     padding: 1vw;
-                    .itemCover {
-                        width: 210px;
+                    transition: all 0.25s ease;
+                    margin: 0.625rem;
+                    height: 20rem;
+                    cursor: pointer;
+
+                    &:hover {
+                        scale: 120%;
+
+                        .infoShow {
+                            opacity: 1;
+                        }
+
+                        .itemCover {
+                            opacity: 0.2;
+                        }
+                    }
+
+                    .infoShow {
+                        display: flex;
+                        position: relative;
+                        top: -20rem;
+                        width: 13.125rem;
+                        height: 100%;
+                        transition: all 0.25s ease;
+                        opacity: 0;
+                        font-family: "Quicksand", 'Courier New', Courier, monospace;
+                        flex-direction: column;
+                        text-align: justify;
+
+                        /* .infoShowActive {
+                            visibility: visible;
+                        } */
+
+                        &__name {
+                            text-align: center;
+                            padding: 1vw;
+                            color: #ffff;
+                            font-style: italic;
+                            font-weight: 600;
+
+                            &:hover {
+                                text-decoration: underline;
+                            }
+                        }
+
+                        &__genre {
+                            padding: .5vw;
+                            justify-content: center;
+                            color: white;
+                            display: flex;
+                            flex-wrap: wrap;
+                            font-size: clamp(.5vw, .7rem, .8rem);
+                        }
+                        &__summary {
+                            padding: 1vw;
+                            color: #ffff;
+                        }
+                    }
+
+                }
+
+            }
+        }
+    }
+
+    footer {
+        .legal {
+            &__container {
+                display: flex;
+                padding: 2vw;
+                margin-top: 5vw;
+                font-family: "Quicksand", 'Courier New', Courier, monospace;
+
+                &--content,
+                &--logo {
+                    display: flex;
+                    flex-direction: column;
+                    flex: 1;
+                    gap: 2vw;
+                    padding: 1vw;
+                    align-items: center;
+
+                    li {
+                        cursor: pointer;
+                        color: #676767;
+                        font-size: clamp(0.5rem, 1vw, 1rem);
+                        font-weight: 600;
                     }
                 }
+
             }
         }
     }

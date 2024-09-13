@@ -110,9 +110,76 @@ body main .freeShows__container {
 }
 body main .freeShows__container--item {
   padding: 1vw;
+  transition: all 0.25s ease;
+  margin: 0.625rem;
+  height: 20rem;
+  cursor: pointer;
 }
-body main .freeShows__container--item .itemCover {
-  width: 210px;
+body main .freeShows__container--item:hover {
+  scale: 120%;
+}
+body main .freeShows__container--item:hover .infoShow {
+  opacity: 1;
+}
+body main .freeShows__container--item:hover .itemCover {
+  opacity: 0.2;
+}
+body main .freeShows__container--item .infoShow {
+  display: flex;
+  position: relative;
+  top: -20rem;
+  width: 13.125rem;
+  height: 100%;
+  transition: all 0.25s ease;
+  opacity: 0;
+  font-family: "Quicksand", "Courier New", Courier, monospace;
+  flex-direction: column;
+  text-align: justify;
+  /* .infoShowActive {
+      visibility: visible;
+  } */
+}
+body main .freeShows__container--item .infoShow__name {
+  text-align: center;
+  padding: 1vw;
+  color: white;
+  font-style: italic;
+  font-weight: 600;
+}
+body main .freeShows__container--item .infoShow__name:hover {
+  text-decoration: underline;
+}
+body main .freeShows__container--item .infoShow__genre {
+  padding: 0.5vw;
+  justify-content: center;
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: clamp(0.5vw, 0.7rem, 0.8rem);
+}
+body main .freeShows__container--item .infoShow__summary {
+  padding: 1vw;
+  color: white;
+}
+body footer .legal__container {
+  display: flex;
+  padding: 2vw;
+  margin-top: 5vw;
+  font-family: "Quicksand", "Courier New", Courier, monospace;
+}
+body footer .legal__container--content, body footer .legal__container--logo {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 2vw;
+  padding: 1vw;
+  align-items: center;
+}
+body footer .legal__container--content li, body footer .legal__container--logo li {
+  cursor: pointer;
+  color: #676767;
+  font-size: clamp(0.5rem, 1vw, 1rem);
+  font-weight: 600;
 }
 
 header .headerContainer__logo i {
@@ -120,5 +187,25 @@ header .headerContainer__logo i {
   width: 15%;
 }
 header .headerContainer__logo i img {
+  width: 100%;
+}
+
+main .contentFlex .freeShows__container--item .itemCover {
+  cursor: pointer;
+  width: 13.125rem;
+  transition: all 0.25s ease;
+  height: 100%;
+  /* &:hover {
+       //scale: 110%;
+       //opacity: 0.5;
+   } */
+}
+
+footer .legal__container--logo i {
+  display: inline-block;
+  width: 35%;
+  align-self: flex-end;
+}
+footer .legal__container--logo i img {
   width: 100%;
 }/*# sourceMappingURL=styles.css.map */
