@@ -24,6 +24,11 @@ body header .headerContainer__logo {
   padding: 1vw;
   width: calc(35% - 1vw);
   flex: 1;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+body header .headerContainer__logo:hover {
+  scale: 110%;
 }
 body header .headerContainer__logo h1 {
   font-family: "Bebas Neue", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
@@ -31,6 +36,8 @@ body header .headerContainer__logo h1 {
   align-content: center;
   padding: 2vw;
   color: white;
+  transition: all 0.25s ease;
+  cursor: pointer;
 }
 body header .headerContainer__menu {
   padding: 1vw;
@@ -50,6 +57,13 @@ body header .headerContainer__menu ul li {
   font-weight: 600;
   font-size: clamp(0.3rem, 1.2vw, 3rem);
   color: white;
+}
+body header .headerContainer__menu ul li a {
+  text-decoration: none;
+  color: #fff;
+}
+body header .headerContainer__menu ul li:hover {
+  text-decoration: underline;
 }
 body header .headerContainer__search {
   padding: 1vw;
@@ -92,39 +106,166 @@ body header .headerContainer__session ul li {
   font-size: clamp(0.3rem, 1.2vw, 3rem);
   color: white;
 }
-body main .freeShows__title {
+body header .headerContainer__session ul .login:hover {
+  text-decoration: underline;
+}
+body header .headerContainer__session ul .signup:hover {
+  text-decoration: underline;
+}
+body header .loginForm {
+  display: flex;
+  background-color: #fff;
+  width: 20vw;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3vw;
+  border-radius: 10px;
+  font-family: "Bebas Neue", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  position: relative;
+  left: 63.26vw;
+  top: -2vw;
+  transition: all 0.3s ease-in-out;
+  visibility: hidden;
+  opacity: 0;
+}
+body header .loginForm__close {
+  position: relative;
+  left: -110px;
+  bottom: -5px;
+}
+body header .loginForm__close--icon .closeImage {
+  cursor: pointer;
+}
+body header .loginForm__user, body header .loginForm__pass, body header .loginForm__button {
+  padding: 1.5vw;
+}
+body header .loginForm__user--title, body header .loginForm__pass--title, body header .loginForm__button--title {
+  text-align: center;
+  margin: 6px;
+}
+body header .loginForm__user--text, body header .loginForm__pass--text, body header .loginForm__button--text {
+  border-radius: 5px;
+  border: solid 2px #f34343;
+}
+body header .loginForm__user--text .textFocus, body header .loginForm__pass--text .textFocus, body header .loginForm__button--text .textFocus {
+  border: solid 2px #f34343;
+}
+body header .loginForm__user--send, body header .loginForm__pass--send, body header .loginForm__button--send {
+  width: 6vw;
+  height: 3vw;
+  border-radius: 13px;
+  cursor: pointer;
+  border: solid 1px #d3d3d3;
+  background: azure;
+  font-family: "Quicksand", "Courier New", Courier, monospace;
+  font-weight: 600;
+}
+body header .loginForm__user--send:focus, body header .loginForm__pass--send:focus, body header .loginForm__button--send:focus {
+  border: solid 2px #f34343;
+}
+body main .freeShows,
+body main .freeMovies,
+body main .showsResult {
+  transition: all 0.25s ease;
+}
+body main .freeShows__title,
+body main .freeMovies__title,
+body main .showsResult__title {
   margin-top: 4vw;
   margin-bottom: 1vw;
+  transition: all 0.25s ease;
+  display: flex;
+  gap: 2vw;
 }
-body main .freeShows__title h3 {
+body main .freeShows__title--backContentMain,
+body main .freeMovies__title--backContentMain,
+body main .showsResult__title--backContentMain {
+  visibility: hidden;
+}
+body main .freeShows__title h3,
+body main .freeMovies__title h3,
+body main .showsResult__title h3 {
   cursor: pointer;
   font-family: "Quicksand", "Courier New", Courier, monospace;
   font-weight: 600;
   font-size: clamp(0.3rem, 1.8vw, 3rem);
   color: white;
 }
-body main .freeShows__container {
+body main .freeShows__container,
+body main .freeMovies__container,
+body main .showsResult__container {
   display: flex;
   padding: 1vw;
   overflow-y: hidden;
+  overflow-x: auto;
+  transition: all 0.25s ease;
 }
-body main .freeShows__container--item {
+body main .freeShows__container::-webkit-scrollbar,
+body main .freeMovies__container::-webkit-scrollbar,
+body main .showsResult__container::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+body main .freeShows__container::-webkit-scrollbar-button:increment,
+body main .freeMovies__container::-webkit-scrollbar-button:increment,
+body main .showsResult__container::-webkit-scrollbar-button:increment {
+  display: none;
+}
+body main .freeShows__container::-webkit-scrollbar:horizontal,
+body main .freeMovies__container::-webkit-scrollbar:horizontal,
+body main .showsResult__container::-webkit-scrollbar:horizontal {
+  height: 0.7vw;
+}
+body main .freeShows__container::-webkit-scrollbar-thumb,
+body main .freeMovies__container::-webkit-scrollbar-thumb,
+body main .showsResult__container::-webkit-scrollbar-thumb {
+  background-color: #797979;
+  border-radius: 30px;
+  border: 2px solid #797979;
+}
+body main .freeShows__container::-webkit-scrollbar-track,
+body main .freeMovies__container::-webkit-scrollbar-track,
+body main .showsResult__container::-webkit-scrollbar-track {
+  border-radius: 20px;
+}
+body main .freeShows__container--item,
+body main .freeMovies__container--item,
+body main .showsResult__container--item {
   padding: 1vw;
   transition: all 0.25s ease;
   margin: 0.625rem;
   height: 20rem;
   cursor: pointer;
 }
-body main .freeShows__container--item:hover {
+body main .freeShows__container--item:hover,
+body main .freeMovies__container--item:hover,
+body main .showsResult__container--item:hover {
   scale: 120%;
 }
-body main .freeShows__container--item:hover .infoShow {
+body main .freeShows__container--item:hover .infoShow,
+body main .freeShows__container--item:hover .infoMovies,
+body main .freeShows__container--item:hover .infoshowsResult,
+body main .freeMovies__container--item:hover .infoShow,
+body main .freeMovies__container--item:hover .infoMovies,
+body main .freeMovies__container--item:hover .infoshowsResult,
+body main .showsResult__container--item:hover .infoShow,
+body main .showsResult__container--item:hover .infoMovies,
+body main .showsResult__container--item:hover .infoshowsResult {
   opacity: 1;
 }
-body main .freeShows__container--item:hover .itemCover {
+body main .freeShows__container--item:hover .itemCover,
+body main .freeMovies__container--item:hover .itemCover,
+body main .showsResult__container--item:hover .itemCover {
   opacity: 0.2;
 }
-body main .freeShows__container--item .infoShow {
+body main .freeShows__container--item .infoShow,
+body main .freeShows__container--item .infoMovies,
+body main .freeShows__container--item .infoshowsResult,
+body main .freeMovies__container--item .infoShow,
+body main .freeMovies__container--item .infoMovies,
+body main .freeMovies__container--item .infoshowsResult,
+body main .showsResult__container--item .infoShow,
+body main .showsResult__container--item .infoMovies,
+body main .showsResult__container--item .infoshowsResult {
   display: flex;
   position: relative;
   top: -20rem;
@@ -139,17 +280,41 @@ body main .freeShows__container--item .infoShow {
       visibility: visible;
   } */
 }
-body main .freeShows__container--item .infoShow__name {
+body main .freeShows__container--item .infoShow__name,
+body main .freeShows__container--item .infoMovies__name,
+body main .freeShows__container--item .infoshowsResult__name,
+body main .freeMovies__container--item .infoShow__name,
+body main .freeMovies__container--item .infoMovies__name,
+body main .freeMovies__container--item .infoshowsResult__name,
+body main .showsResult__container--item .infoShow__name,
+body main .showsResult__container--item .infoMovies__name,
+body main .showsResult__container--item .infoshowsResult__name {
   text-align: center;
   padding: 1vw;
   color: white;
   font-style: italic;
   font-weight: 600;
 }
-body main .freeShows__container--item .infoShow__name:hover {
+body main .freeShows__container--item .infoShow__name:hover,
+body main .freeShows__container--item .infoMovies__name:hover,
+body main .freeShows__container--item .infoshowsResult__name:hover,
+body main .freeMovies__container--item .infoShow__name:hover,
+body main .freeMovies__container--item .infoMovies__name:hover,
+body main .freeMovies__container--item .infoshowsResult__name:hover,
+body main .showsResult__container--item .infoShow__name:hover,
+body main .showsResult__container--item .infoMovies__name:hover,
+body main .showsResult__container--item .infoshowsResult__name:hover {
   text-decoration: underline;
 }
-body main .freeShows__container--item .infoShow__genre {
+body main .freeShows__container--item .infoShow__genre,
+body main .freeShows__container--item .infoMovies__genre,
+body main .freeShows__container--item .infoshowsResult__genre,
+body main .freeMovies__container--item .infoShow__genre,
+body main .freeMovies__container--item .infoMovies__genre,
+body main .freeMovies__container--item .infoshowsResult__genre,
+body main .showsResult__container--item .infoShow__genre,
+body main .showsResult__container--item .infoMovies__genre,
+body main .showsResult__container--item .infoshowsResult__genre {
   padding: 0.5vw;
   justify-content: center;
   color: white;
@@ -157,9 +322,68 @@ body main .freeShows__container--item .infoShow__genre {
   flex-wrap: wrap;
   font-size: clamp(0.5vw, 0.7rem, 0.8rem);
 }
-body main .freeShows__container--item .infoShow__summary {
+body main .freeShows__container--item .infoShow__summary,
+body main .freeShows__container--item .infoMovies__summary,
+body main .freeShows__container--item .infoshowsResult__summary,
+body main .freeMovies__container--item .infoShow__summary,
+body main .freeMovies__container--item .infoMovies__summary,
+body main .freeMovies__container--item .infoshowsResult__summary,
+body main .showsResult__container--item .infoShow__summary,
+body main .showsResult__container--item .infoMovies__summary,
+body main .showsResult__container--item .infoshowsResult__summary {
   padding: 1vw;
   color: white;
+}
+body main .freeShows__container--item .infoShow__playContainer,
+body main .freeShows__container--item .infoMovies__playContainer,
+body main .freeShows__container--item .infoshowsResult__playContainer,
+body main .freeMovies__container--item .infoShow__playContainer,
+body main .freeMovies__container--item .infoMovies__playContainer,
+body main .freeMovies__container--item .infoshowsResult__playContainer,
+body main .showsResult__container--item .infoShow__playContainer,
+body main .showsResult__container--item .infoMovies__playContainer,
+body main .showsResult__container--item .infoshowsResult__playContainer {
+  padding: 0.8vw;
+  display: flex;
+  justify-content: center;
+  height: 5vw;
+}
+body main .freeShows__container--item .infoShow__playContainer--playIcon,
+body main .freeShows__container--item .infoMovies__playContainer--playIcon,
+body main .freeShows__container--item .infoshowsResult__playContainer--playIcon,
+body main .freeMovies__container--item .infoShow__playContainer--playIcon,
+body main .freeMovies__container--item .infoMovies__playContainer--playIcon,
+body main .freeMovies__container--item .infoshowsResult__playContainer--playIcon,
+body main .showsResult__container--item .infoShow__playContainer--playIcon,
+body main .showsResult__container--item .infoMovies__playContainer--playIcon,
+body main .showsResult__container--item .infoshowsResult__playContainer--playIcon {
+  height: 100%;
+  width: 3vw;
+  display: flex;
+}
+body main .freeShows__container--item .infoShow__playContainer--playIcon .playImage,
+body main .freeShows__container--item .infoMovies__playContainer--playIcon .playImage,
+body main .freeShows__container--item .infoshowsResult__playContainer--playIcon .playImage,
+body main .freeMovies__container--item .infoShow__playContainer--playIcon .playImage,
+body main .freeMovies__container--item .infoMovies__playContainer--playIcon .playImage,
+body main .freeMovies__container--item .infoshowsResult__playContainer--playIcon .playImage,
+body main .showsResult__container--item .infoShow__playContainer--playIcon .playImage,
+body main .showsResult__container--item .infoMovies__playContainer--playIcon .playImage,
+body main .showsResult__container--item .infoshowsResult__playContainer--playIcon .playImage {
+  width: 100%;
+  transition: all 0.25s ease;
+  align-self: center;
+}
+body main .freeShows__container--item .infoShow__playContainer--playIcon .playImage:hover,
+body main .freeShows__container--item .infoMovies__playContainer--playIcon .playImage:hover,
+body main .freeShows__container--item .infoshowsResult__playContainer--playIcon .playImage:hover,
+body main .freeMovies__container--item .infoShow__playContainer--playIcon .playImage:hover,
+body main .freeMovies__container--item .infoMovies__playContainer--playIcon .playImage:hover,
+body main .freeMovies__container--item .infoshowsResult__playContainer--playIcon .playImage:hover,
+body main .showsResult__container--item .infoShow__playContainer--playIcon .playImage:hover,
+body main .showsResult__container--item .infoMovies__playContainer--playIcon .playImage:hover,
+body main .showsResult__container--item .infoshowsResult__playContainer--playIcon .playImage:hover {
+  transform: translateY(-10px);
 }
 body footer .legal__container {
   display: flex;
@@ -181,16 +405,34 @@ body footer .legal__container--content li, body footer .legal__container--logo l
   font-size: clamp(0.5rem, 1vw, 1rem);
   font-weight: 600;
 }
+body::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+body::-webkit-scrollbar:vertical {
+  width: 0.6vw;
+}
+body::-webkit-scrollbar-button,
+body .contenedor::-webkit-scrollbar-button {
+  display: none;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: #797979;
+  border-radius: 20px;
+}
+body::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
 
 header .headerContainer__logo i {
   display: inline-block;
   width: 15%;
+  margin-left: 0.6vw;
 }
 header .headerContainer__logo i img {
   width: 100%;
 }
 
-main .contentFlex .freeShows__container--item .itemCover {
+main .contentFlex .freeShows__container--item .itemCover, main .contentFlex .freeMovies__container--item .itemCover, main .contentFlex .showsResult__container--item .itemCover {
   cursor: pointer;
   width: 13.125rem;
   transition: all 0.25s ease;

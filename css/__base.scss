@@ -29,6 +29,9 @@
     padding: 1vw;
     width: calc(35% - 1vw);
     flex: 1;
+    transition: all 0.25s ease;
+    cursor: pointer;
+    
 }
 
 @mixin h1Logo {
@@ -37,6 +40,8 @@
     align-content: center;
     padding: 2vw;
     color: #ffff;
+    transition: all 0.25s ease;
+    cursor: pointer;
 }
 
 @mixin headerContainersGral ($widthPorcent, $widthVw) {

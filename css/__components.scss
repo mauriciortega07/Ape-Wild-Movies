@@ -4,7 +4,8 @@ header {
             i {
                 display: inline-block;
                 width: 15%;
-
+                margin-left: .6vw;
+                
                 img {
                     width: 100%;
                 }
@@ -15,7 +16,7 @@ header {
 
 main {
     .contentFlex {
-        .freeShows {
+        .freeShows, .freeMovies, .showsResult {
             &__container {
                 &--item {
                     .itemCover {

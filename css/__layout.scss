@@ -10,6 +10,10 @@ body {
             &__logo {
                 @include headerContainerLogo;
 
+                &:hover {
+                    scale: 110%;
+                }
+
                 h1 {
                     @include h1Logo;
                 }
@@ -23,6 +27,15 @@ body {
 
                     li {
                         @include headerUlLiStyle(0.3rem, 1.2vw, 3rem);
+
+                        a {
+                            text-decoration: none;
+                            color: #fff;
+                        }
+
+                        &:hover {
+                            text-decoration: underline;
+                        }
                     }
                 }
             }
@@ -49,6 +62,80 @@ body {
                     li {
                         @include headerUlLiStyle(0.3rem, 1.2vw, 3rem);
                     }
+
+                    .login:hover {
+                        text-decoration: underline;
+                    }
+
+                    .signup:hover {
+                        text-decoration: underline;
+                    }
+
+                }
+            }
+        }
+
+        .loginForm {
+            display: flex;
+            background-color: #fff;
+            width: 20vw;
+            flex-direction: column;
+            align-items: center;
+            gap: .3vw;
+            border-radius: 10px;
+            font-family: "Bebas Neue", 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            position: relative;
+            left: 63.26vw;
+            top: -2vw;
+            transition: all .30s ease-in-out;
+            visibility: hidden;
+            opacity: 0;
+
+            &__close {
+                position: relative;
+                left: -110px;
+                bottom: -5px;
+
+                &--icon {
+
+                    .closeImage {
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            &__user,
+            &__pass,
+            &__button {
+                padding: 1.5vw;
+
+                &--title {
+                    text-align: center;
+                    margin: 6px;
+                }
+
+                &--text {
+                    border-radius: 5px;
+                    border: solid 2px #f34343;
+
+                    .textFocus {
+                        border: solid 2px #f34343;
+                    }
+                }
+
+                &--send {
+                    width: 6vw;
+                    height: 3vw;
+                    border-radius: 13px;
+                    cursor: pointer;
+                    border: solid 1px #d3d3d3;
+                    background: azure;
+                    font-family: "Quicksand", "Courier New", Courier, monospace;
+                    font-weight: 600;
+
+                    &:focus {
+                        border: solid 2px #f34343;
+                    }
                 }
             }
         }
@@ -56,10 +143,22 @@ body {
     }
 
     main {
-        .freeShows {
+
+        .freeShows,
+        .freeMovies,
+        .showsResult {
+            transition: all 0.25s ease;
+
             &__title {
                 margin-top: 4vw;
                 margin-bottom: 1vw;
+                transition: all .25s ease;
+                display: flex;
+                gap: 2vw;
+
+                &--backContentMain {
+                    visibility: hidden;
+                }
 
                 h3 {
                     @include headerUlLiStyle(0.3rem, 1.8vw, 3rem);
@@ -69,8 +168,32 @@ body {
             &__container {
                 display: flex;
                 padding: 1vw;
-
                 overflow-y: hidden;
+                overflow-x: auto;
+                transition: all 0.25s ease;
+
+                &::-webkit-scrollbar {
+                    -webkit-appearance: none;
+                }
+
+
+                &::-webkit-scrollbar-button:increment {
+                    display: none;
+                }
+
+                &::-webkit-scrollbar:horizontal {
+                    height: 0.7vw;
+                }
+
+                &::-webkit-scrollbar-thumb {
+                    background-color: #797979;
+                    border-radius: 30px;
+                    border: 2px solid #797979;
+                }
+
+                &::-webkit-scrollbar-track {
+                    border-radius: 20px;
+                }
 
                 &--item {
                     padding: 1vw;
@@ -82,7 +205,9 @@ body {
                     &:hover {
                         scale: 120%;
 
-                        .infoShow {
+                        .infoShow,
+                        .infoMovies,
+                        .infoshowsResult {
                             opacity: 1;
                         }
 
@@ -91,7 +216,9 @@ body {
                         }
                     }
 
-                    .infoShow {
+                    .infoShow,
+                    .infoMovies,
+                    .infoshowsResult {
                         display: flex;
                         position: relative;
                         top: -20rem;
@@ -127,9 +254,33 @@ body {
                             flex-wrap: wrap;
                             font-size: clamp(.5vw, .7rem, .8rem);
                         }
+
                         &__summary {
                             padding: 1vw;
                             color: #ffff;
+                        }
+
+                        &__playContainer {
+                            padding: .8vw;
+                            display: flex;
+                            justify-content: center;
+                            height: 5vw;
+
+                            &--playIcon {
+                                height: 100%;
+                                width: 3vw;
+                                display: flex;
+
+                                .playImage {
+                                    width: 100%;
+                                    transition: all 0.25s ease;
+                                    align-self: center;
+
+                                    &:hover {
+                                        transform: translateY(-10px);
+                                    }
+                                }
+                            }
                         }
                     }
 
@@ -167,4 +318,28 @@ body {
             }
         }
     }
+
+    &::-webkit-scrollbar {
+        -webkit-appearance: none;
+    }
+
+    &::-webkit-scrollbar:vertical {
+        width: 0.6vw;
+    }
+
+    &::-webkit-scrollbar-button,
+    .contenedor::-webkit-scrollbar-button {
+        display: none;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: #797979;
+        border-radius: 20px;
+        //border: 2px solid #797979;
+    }
+
+    &::-webkit-scrollbar-track {
+        border-radius: 10px;
+    }
+
 }
