@@ -1,0 +1,57 @@
+header {
+    .headerContainer {
+        &__logo {
+            i {
+                display: inline-block;
+                width: 15%;
+                margin-left: .6vw;
+                
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+
+main {
+    .contentFlex {
+        .freeShows, .freeMovies, .showsResult {
+            &__container {
+                &--item {
+                    .itemCover {
+                        cursor: pointer;
+                        width: 13.125rem;
+                        transition: all 0.25s ease;
+                        height: 100%;
+
+                       /* &:hover {
+                            //scale: 110%;
+                            //opacity: 0.5;
+                        } */ 
+
+                    }
+                }
+            }
+        }
+    }
+}
+
+footer {
+    .legal {
+        &__container {
+            &--logo {
+                i {
+                    display: inline-block;
+                    width: 35%;
+                    align-self: flex-end;
+
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,530 @@
+header .headerContainer__logo i {
+  display: inline-block;
+  width: 15%;
+  margin-left: 0.6vw;
+}
+header .headerContainer__logo i img {
+  width: 100%;
+}
+
+main .contentFlex .freeShows__container--item .itemCover, main .contentFlex .freeMovies__container--item .itemCover, main .contentFlex .showsResult__container--item .itemCover {
+  cursor: pointer;
+  width: 13.125rem;
+  transition: all 0.25s ease;
+  height: 100%;
+  /* &:hover {
+       //scale: 110%;
+       //opacity: 0.5;
+   } */
+}
+
+footer .legal__container--logo i {
+  display: inline-block;
+  width: 35%;
+  align-self: flex-end;
+}
+footer .legal__container--logo i img {
+  width: 100%;
+}
+
+body {
+  background-color: #000000;
+  padding: 1vw 2vw;
+}
+body header {
+  height: 30vw;
+  background-image: url("https://image.tmdb.org/t/p/original/yDHYTfA3R0jFYba16jBB1ef8oIt.jpg");
+  background-repeat: no-repeat;
+  background-position-y: 3%;
+  background-size: 100%;
+  box-shadow: inset 0px 200px 69px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 1vw;
+}
+body header .headerContainer {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  justify-content: space-evenly;
+  background-color: transparent;
+}
+body header .headerContainer__logo {
+  display: flex;
+  flex-direction: row;
+  padding: 1vw;
+  width: calc(35% - 1vw);
+  flex: 1;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+body header .headerContainer__logo:hover {
+  scale: 110%;
+}
+body header .headerContainer__logo h1 {
+  font-family: "Bebas Neue", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: clamp(0.5rem, 3vw, 5rem);
+  align-content: center;
+  padding: 2vw;
+  color: white;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+body header .headerContainer__logo h1 a {
+  color: #fff;
+  text-decoration: none;
+}
+body header .headerContainer__menu {
+  padding: 1vw;
+  display: flex;
+  width: calc(27% - 1vw);
+  box-sizing: border-box;
+}
+body header .headerContainer__menu ul {
+  display: flex;
+  justify-content: center;
+  gap: 1.5vw;
+  flex: 1;
+}
+body header .headerContainer__menu ul li {
+  cursor: pointer;
+  font-family: "Quicksand", "Courier New", Courier, monospace;
+  font-weight: 600;
+  font-size: clamp(0.3rem, 1.2vw, 3rem);
+  color: white;
+}
+body header .headerContainer__menu ul li a {
+  text-decoration: none;
+  color: #fff;
+}
+body header .headerContainer__menu ul li:hover {
+  text-decoration: underline;
+}
+body header .headerContainer__search {
+  padding: 1vw;
+  display: flex;
+  width: calc(22% - 1vw);
+  box-sizing: border-box;
+}
+body header .headerContainer__search #searchText {
+  border-radius: 50px;
+  padding: 7%;
+  width: 100%;
+  height: 1rem;
+  background-color: transparent;
+  font-size: clamp(0.3rem, 1.2vw, 3rem);
+  box-sizing: border-box;
+  border: 0.1vw solid white;
+}
+body header .headerContainer__search .searchButton {
+  width: 10%;
+  position: relative;
+  right: 14.5%;
+  bottom: 87%;
+}
+body header .headerContainer__session {
+  padding: 1vw;
+  display: flex;
+  width: calc(24% - 1vw);
+  box-sizing: border-box;
+}
+body header .headerContainer__session ul {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 1.5vw;
+  flex: 1;
+}
+body header .headerContainer__session ul li {
+  cursor: pointer;
+  font-family: "Quicksand", "Courier New", Courier, monospace;
+  font-weight: 600;
+  font-size: clamp(0.3rem, 1.2vw, 3rem);
+  color: white;
+}
+body header .headerContainer__session ul .login:hover {
+  text-decoration: underline;
+}
+body header .headerContainer__session ul .signin:hover {
+  text-decoration: underline;
+}
+body header .headerContainer__session .messageSession {
+  display: flex;
+  font-family: "Bebas Neue", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: clamp(0.3rem, 2vw, 5rem);
+  align-content: center;
+  color: white;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  width: 100%;
+  justify-content: space-evenly;
+}
+body header .loginForm {
+  display: flex;
+  background-color: #fff;
+  width: 20vw;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3vw;
+  border-radius: 10px;
+  font-family: "Bebas Neue", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  position: relative;
+  left: 63.26vw;
+  top: -2vw;
+  transition: all 0.3s ease-in-out;
+  visibility: hidden;
+  opacity: 0;
+}
+body header .loginForm__close {
+  position: relative;
+  left: -110px;
+  bottom: -5px;
+}
+body header .loginForm__close--icon .closeImage {
+  cursor: pointer;
+}
+body header .loginForm__user, body header .loginForm__pass, body header .loginForm__button {
+  padding: 1.5vw;
+}
+body header .loginForm__user--title, body header .loginForm__pass--title, body header .loginForm__button--title {
+  text-align: center;
+  margin: 6px;
+}
+body header .loginForm__user--text, body header .loginForm__user--name, body header .loginForm__pass--text, body header .loginForm__pass--name, body header .loginForm__button--text, body header .loginForm__button--name {
+  border-radius: 5px;
+  border: solid 2px #f34343;
+}
+body header .loginForm__user--text .textFocus, body header .loginForm__user--name .textFocus, body header .loginForm__pass--text .textFocus, body header .loginForm__pass--name .textFocus, body header .loginForm__button--text .textFocus, body header .loginForm__button--name .textFocus {
+  border: solid 2px #f34343;
+}
+body header .loginForm__user--send, body header .loginForm__pass--send, body header .loginForm__button--send {
+  width: 6vw;
+  height: 3vw;
+  border-radius: 13px;
+  cursor: pointer;
+  border: solid 1px #d3d3d3;
+  background: azure;
+  font-family: "Quicksand", "Courier New", Courier, monospace;
+  font-weight: 600;
+}
+body header .loginForm__user--send:focus, body header .loginForm__pass--send:focus, body header .loginForm__button--send:focus {
+  border: solid 2px #f34343;
+}
+body header .signinForm {
+  display: flex;
+  background-color: #fff;
+  width: 20vw;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3vw;
+  border-radius: 10px;
+  font-family: "Bebas Neue", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  position: relative;
+  left: 74.26vw;
+  top: -25vw;
+  transition: all 0.3s ease-in-out;
+  visibility: hidden;
+  opacity: 0;
+}
+body header .signinForm__close {
+  position: relative;
+  left: -110px;
+  bottom: -5px;
+}
+body header .signinForm__close--icon .closeImageSigninForm {
+  cursor: pointer;
+}
+body header .signinForm__user, body header .signinForm__button {
+  padding: 0.5vw;
+  display: flex;
+  flex-direction: column;
+}
+body header .signinForm__user--title, body header .signinForm__button--title {
+  text-align: center;
+  margin: 6px;
+}
+body header .signinForm__user--name, body header .signinForm__button--name {
+  border-radius: 5px;
+  border: solid 2px #f34343;
+  margin-bottom: 12px;
+}
+body header .signinForm__user--name .textFocus, body header .signinForm__button--name .textFocus {
+  border: solid 2px #f34343;
+}
+body header .signinForm__user--send, body header .signinForm__button--send {
+  height: 3vw;
+  border-radius: 13px;
+  cursor: pointer;
+  border: solid 1px #d3d3d3;
+  background: azure;
+  font-family: "Quicksand", "Courier New", Courier, monospace;
+  font-weight: 600;
+}
+body header .signinForm__user--send:focus, body header .signinForm__button--send:focus {
+  border: solid 2px #f34343;
+}
+body main .contentFlex__productsGrid--title {
+  margin-top: 4vw;
+  margin-bottom: 1vw;
+  transition: all 0.25s ease;
+  display: flex;
+  gap: 2vw;
+}
+body main .contentFlex__productsGrid--title h3 {
+  cursor: pointer;
+  font-family: "Quicksand", "Courier New", Courier, monospace;
+  font-weight: 600;
+  font-size: clamp(0.3rem, 1.8vw, 3rem);
+  color: white;
+}
+body main .contentFlex__productsGrid--grid {
+  display: grid;
+  padding: 1vw;
+  grid-template-columns: repeat(auto-fill, minmax(25%, 1fr));
+  gap: 1vw;
+  justify-items: center;
+}
+body main .contentFlex__productsGrid--grid .productsGrid__item {
+  font-family: "Quicksand", "Courier New", Courier, monospace;
+  padding: 1vw;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  color: white;
+  width: calc(100% - 1vw);
+}
+body main .contentFlex__productsGrid--grid .productsGrid__item .itemCover {
+  cursor: pointer;
+  width: 13.125rem;
+  transition: all 0.25s ease;
+  height: 100%;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+}
+body main .contentFlex__productsGrid--grid .productsGrid__item .infoItem {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  background-color: #c55252;
+  width: 100%;
+  padding: 5px;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  box-shadow: inset 0px 0px 9px 2px black;
+  justify-content: space-evenly;
+}
+body main .contentFlex__productsGrid--grid .productsGrid__item .infoItem__title {
+  text-align: center;
+  padding: 1vw;
+  color: white;
+  font-style: italic;
+  font-weight: 900;
+  padding: 0.4vw;
+}
+body main .contentFlex__productsGrid--grid .productsGrid__item .infoItem__resolution {
+  width: 70%;
+}
+body main .contentFlex__productsGrid--grid .productsGrid__item .infoItem__genre {
+  padding: 0.5vw;
+  justify-content: center;
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: clamp(0.5vw, 0.7rem, 0.8rem);
+  padding: 0.4vw;
+}
+body main .contentFlex__productsGrid--grid .productsGrid__item .infoItem__summary {
+  padding: 0.4vw;
+  text-align: center;
+}
+body main .contentFlex__productsGrid--grid .productsGrid__item .infoItem__price {
+  font-weight: 700;
+}
+body main .contentFlex__productsGrid--grid .productsGrid__item .infoItem__addCart--icon {
+  padding: 0.4vw;
+}
+body main .contentFlex__productsGrid--grid .productsGrid__item .infoItem__addCart {
+  display: flex;
+}
+body main .contentFlex__productsGrid--grid .productsGrid__item .infoItem__addCart--icon {
+  width: 2vw;
+}
+body main .contentFlex__productsGrid--grid .productsGrid__item .infoItem__addCart--icon .addCartImage {
+  width: 100%;
+  transition: all 0.25s ease;
+}
+body main .contentFlex__productsGrid--grid .productsGrid__item .infoItem__addCart--icon .addCartImage:hover {
+  scale: 130%;
+}
+body main .contentFlex .showsResult {
+  transition: all 0.25s ease;
+}
+body main .contentFlex .showsResult__title {
+  margin-top: 4vw;
+  margin-bottom: 1vw;
+  transition: all 0.25s ease;
+  display: flex;
+  gap: 2vw;
+}
+body main .contentFlex .showsResult__title--backContentMain {
+  visibility: hidden;
+}
+body main .contentFlex .showsResult__title h3 {
+  cursor: pointer;
+  font-family: "Quicksand", "Courier New", Courier, monospace;
+  font-weight: 600;
+  font-size: clamp(0.3rem, 1.8vw, 3rem);
+  color: white;
+}
+body main .contentFlex .showsResult__container {
+  display: flex;
+  padding: 1vw;
+  overflow-y: hidden;
+  overflow-x: auto;
+  transition: all 0.25s ease;
+}
+body main .contentFlex .showsResult__container::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+body main .contentFlex .showsResult__container::-webkit-scrollbar-button:increment {
+  display: none;
+}
+body main .contentFlex .showsResult__container::-webkit-scrollbar:horizontal {
+  height: 0.7vw;
+}
+body main .contentFlex .showsResult__container::-webkit-scrollbar-thumb {
+  background-color: #797979;
+  border-radius: 30px;
+  border: 2px solid #797979;
+}
+body main .contentFlex .showsResult__container::-webkit-scrollbar-track {
+  border-radius: 20px;
+}
+body main .contentFlex .showsResult__container--item {
+  padding: 1vw;
+  transition: all 0.25s ease;
+  margin: 0.625rem;
+  height: 20rem;
+  cursor: pointer;
+}
+body main .contentFlex .showsResult__container--item:hover {
+  scale: 120%;
+}
+body main .contentFlex .showsResult__container--item:hover .infoShow,
+body main .contentFlex .showsResult__container--item:hover .infoMovies,
+body main .contentFlex .showsResult__container--item:hover .infoshowsResult {
+  opacity: 1;
+}
+body main .contentFlex .showsResult__container--item:hover .itemCover {
+  opacity: 0.2;
+}
+body main .contentFlex .showsResult__container--item .infoShow,
+body main .contentFlex .showsResult__container--item .infoMovies,
+body main .contentFlex .showsResult__container--item .infoshowsResult {
+  display: flex;
+  position: relative;
+  top: -20rem;
+  width: 13.125rem;
+  height: 100%;
+  transition: all 0.25s ease;
+  opacity: 0;
+  font-family: "Quicksand", "Courier New", Courier, monospace;
+  flex-direction: column;
+  text-align: justify;
+  /* .infoShowActive {
+      visibility: visible;
+  } */
+}
+body main .contentFlex .showsResult__container--item .infoShow__name,
+body main .contentFlex .showsResult__container--item .infoMovies__name,
+body main .contentFlex .showsResult__container--item .infoshowsResult__name {
+  text-align: center;
+  padding: 1vw;
+  color: white;
+  font-style: italic;
+  font-weight: 600;
+}
+body main .contentFlex .showsResult__container--item .infoShow__name:hover,
+body main .contentFlex .showsResult__container--item .infoMovies__name:hover,
+body main .contentFlex .showsResult__container--item .infoshowsResult__name:hover {
+  text-decoration: underline;
+}
+body main .contentFlex .showsResult__container--item .infoShow__genre,
+body main .contentFlex .showsResult__container--item .infoMovies__genre,
+body main .contentFlex .showsResult__container--item .infoshowsResult__genre {
+  padding: 0.5vw;
+  justify-content: center;
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: clamp(0.5vw, 0.7rem, 0.8rem);
+}
+body main .contentFlex .showsResult__container--item .infoShow__summary,
+body main .contentFlex .showsResult__container--item .infoMovies__summary,
+body main .contentFlex .showsResult__container--item .infoshowsResult__summary {
+  padding: 1vw;
+  color: white;
+}
+body main .contentFlex .showsResult__container--item .infoShow__playContainer,
+body main .contentFlex .showsResult__container--item .infoMovies__playContainer,
+body main .contentFlex .showsResult__container--item .infoshowsResult__playContainer {
+  padding: 0.8vw;
+  display: flex;
+  justify-content: center;
+  height: 5vw;
+}
+body main .contentFlex .showsResult__container--item .infoShow__playContainer--playIcon,
+body main .contentFlex .showsResult__container--item .infoMovies__playContainer--playIcon,
+body main .contentFlex .showsResult__container--item .infoshowsResult__playContainer--playIcon {
+  height: 100%;
+  width: 3vw;
+  display: flex;
+}
+body main .contentFlex .showsResult__container--item .infoShow__playContainer--playIcon .playImage,
+body main .contentFlex .showsResult__container--item .infoMovies__playContainer--playIcon .playImage,
+body main .contentFlex .showsResult__container--item .infoshowsResult__playContainer--playIcon .playImage {
+  width: 100%;
+  transition: all 0.25s ease;
+  align-self: center;
+}
+body main .contentFlex .showsResult__container--item .infoShow__playContainer--playIcon .playImage:hover,
+body main .contentFlex .showsResult__container--item .infoMovies__playContainer--playIcon .playImage:hover,
+body main .contentFlex .showsResult__container--item .infoshowsResult__playContainer--playIcon .playImage:hover {
+  transform: translateY(-10px);
+}
+body footer .legal__container {
+  display: flex;
+  padding: 2vw;
+  margin-top: 5vw;
+  font-family: "Quicksand", "Courier New", Courier, monospace;
+}
+body footer .legal__container--content, body footer .legal__container--logo {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 2vw;
+  padding: 1vw;
+  align-items: center;
+}
+body footer .legal__container--content li, body footer .legal__container--logo li {
+  cursor: pointer;
+  color: #676767;
+  font-size: clamp(0.5rem, 1vw, 1rem);
+  font-weight: 600;
+}
+body::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+body::-webkit-scrollbar:vertical {
+  width: 0.6vw;
+}
+body::-webkit-scrollbar-button,
+body .contenedor::-webkit-scrollbar-button {
+  display: none;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: #797979;
+  border-radius: 20px;
+}
+body::-webkit-scrollbar-track {
+  border-radius: 10px;
+}/*# sourceMappingURL=styles.css.map */

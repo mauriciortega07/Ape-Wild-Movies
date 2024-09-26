@@ -39,6 +39,10 @@ body header .headerContainer__logo h1 {
   transition: all 0.25s ease;
   cursor: pointer;
 }
+body header .headerContainer__logo h1 a {
+  color: #fff;
+  text-decoration: none;
+}
 body header .headerContainer__menu {
   padding: 1vw;
   display: flex;
@@ -109,8 +113,19 @@ body header .headerContainer__session ul li {
 body header .headerContainer__session ul .login:hover {
   text-decoration: underline;
 }
-body header .headerContainer__session ul .signup:hover {
+body header .headerContainer__session ul .signin:hover {
   text-decoration: underline;
+}
+body header .headerContainer__session .messageSession {
+  display: flex;
+  font-family: "Bebas Neue", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: clamp(0.3rem, 2vw, 5rem);
+  align-content: center;
+  color: white;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  width: 100%;
+  justify-content: space-evenly;
 }
 body header .loginForm {
   display: flex;
@@ -143,11 +158,11 @@ body header .loginForm__user--title, body header .loginForm__pass--title, body h
   text-align: center;
   margin: 6px;
 }
-body header .loginForm__user--text, body header .loginForm__pass--text, body header .loginForm__button--text {
+body header .loginForm__user--text, body header .loginForm__user--name, body header .loginForm__pass--text, body header .loginForm__pass--name, body header .loginForm__button--text, body header .loginForm__button--name {
   border-radius: 5px;
   border: solid 2px #f34343;
 }
-body header .loginForm__user--text .textFocus, body header .loginForm__pass--text .textFocus, body header .loginForm__button--text .textFocus {
+body header .loginForm__user--text .textFocus, body header .loginForm__user--name .textFocus, body header .loginForm__pass--text .textFocus, body header .loginForm__pass--name .textFocus, body header .loginForm__button--text .textFocus, body header .loginForm__button--name .textFocus {
   border: solid 2px #f34343;
 }
 body header .loginForm__user--send, body header .loginForm__pass--send, body header .loginForm__button--send {
@@ -161,6 +176,59 @@ body header .loginForm__user--send, body header .loginForm__pass--send, body hea
   font-weight: 600;
 }
 body header .loginForm__user--send:focus, body header .loginForm__pass--send:focus, body header .loginForm__button--send:focus {
+  border: solid 2px #f34343;
+}
+body header .signinForm {
+  display: flex;
+  background-color: #fff;
+  width: 20vw;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3vw;
+  border-radius: 10px;
+  font-family: "Bebas Neue", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  position: relative;
+  left: 74.26vw;
+  top: -25vw;
+  transition: all 0.3s ease-in-out;
+  visibility: hidden;
+  opacity: 0;
+}
+body header .signinForm__close {
+  position: relative;
+  left: -110px;
+  bottom: -5px;
+}
+body header .signinForm__close--icon .closeImageSigninForm {
+  cursor: pointer;
+}
+body header .signinForm__user, body header .signinForm__button {
+  padding: 0.5vw;
+  display: flex;
+  flex-direction: column;
+}
+body header .signinForm__user--title, body header .signinForm__button--title {
+  text-align: center;
+  margin: 6px;
+}
+body header .signinForm__user--name, body header .signinForm__button--name {
+  border-radius: 5px;
+  border: solid 2px #f34343;
+  margin-bottom: 12px;
+}
+body header .signinForm__user--name .textFocus, body header .signinForm__button--name .textFocus {
+  border: solid 2px #f34343;
+}
+body header .signinForm__user--send, body header .signinForm__button--send {
+  height: 3vw;
+  border-radius: 13px;
+  cursor: pointer;
+  border: solid 1px #d3d3d3;
+  background: azure;
+  font-family: "Quicksand", "Courier New", Courier, monospace;
+  font-weight: 600;
+}
+body header .signinForm__user--send:focus, body header .signinForm__button--send:focus {
   border: solid 2px #f34343;
 }
 body main .freeShows,
