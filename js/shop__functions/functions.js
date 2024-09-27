@@ -202,9 +202,9 @@ closeElementSigninForm.addEventListener("click", () => {
     document.querySelector(".signinForm").style.opacity = "0";
 })
 
-// ------- FUNCION DE REGISTRO DE USUARIOS
+// ---------------------------------- FUNCION DE REGISTRO DE USUARIOS ------------------------
 
-// ------- OBTENEMOS LOS VALORES DEL USUARIO A REGISTRAR
+// -------------- OBTENEMOS LOS VALORES DEL USUARIO A REGISTRAR Y SE REGISTRA -----------
 
 const signinFormUser = document.querySelector(".signinForm__button--send");
 signinFormUser.addEventListener("click", () => {
@@ -224,26 +224,16 @@ signinFormUser.addEventListener("click", () => {
     localStorage.setItem("users", JSON.stringify(Users))
     alert("Registro Exitoso!");
 
-    window.location.href = "index.html"
+    window.location.href = "shop.html"
     //const newUser = new User (nameData, lastnameData, emailData, passData);
 
 });
 
-// ------------------ INICIO DE SESION CON LOS USUARIOS REGISTRADOS
+// --------------------- INICIO DE SESION CON LOS USUARIOS REGISTRADOS ---------------
 
-const loginFormUser = document.querySelector(".loginForm__button--send");
-loginFormUser.addEventListener("click", () => {
-    const emailRegister = document.querySelector(".emailRegister").value;
-    console.log(emailRegister)
-    const passwordRegister = document.querySelector(".passwordRegister").value;
-    console.log(passwordRegister)
-
-    const Users = JSON.parse(localStorage.getItem("users")) || []
-    const validUser = Users.find(user => user.email === emailRegister && user.password === passwordRegister);
-    if (!validUser) {
-        return alert("Usuario o contraseña incorrecta");
-    }
-
+/*------- FUNCION QUE CREA LA TARJETA DE BIENVENIDA AL INICIAR SESION, AGREGA 
+ICONOS DE SHOPPING Y DE LOGOUT*/
+const activeSession = (validUser) => {
     // ----- DESAPARECEN LAS OPCIONES DE SESION --------------------
     const headerContainerSession = document.querySelector(".headerContainer__session");
     const loginSigin = document.querySelector(".loginSigin").style.display = "none";
@@ -259,6 +249,16 @@ loginFormUser.addEventListener("click", () => {
     message.textContent = `Bienvenido ${validUser.name}`;
     messageContainer.appendChild(message);
 
+    const shoppingIcon = document.createElement("i");
+    shoppingIcon.classList.add("messageSession__shoppingIcon");
+    messageContainer.appendChild(shoppingIcon);
+    const shoppingImage = document.createElement("input");
+    shoppingImage.classList.add("messageSession__shoppingIcon--Image");
+    shoppingImage.type = "image";
+    shoppingImage.src = "/img/icons/shopping-bag.svg";
+    shoppingImage.alt = "Icono de bolsa de compra";
+    shoppingIcon.appendChild(shoppingImage);
+
     const logOutIcon = document.createElement("i");
     logOutIcon.classList.add("messageSession__logOutIcon");
     messageContainer.appendChild(logOutIcon);
@@ -273,12 +273,26 @@ loginFormUser.addEventListener("click", () => {
 
     document.querySelector(".loginForm").style.visibility = "hidden"
     document.querySelector(".loginForm").style.opacity = "0";
+}
+
+const loginFormUser = document.querySelector(".loginForm__button--send");
+loginFormUser.addEventListener("click", () => {
+    const emailRegister = document.querySelector(".emailRegister").value;
+    console.log(emailRegister)
+    const passwordRegister = document.querySelector(".passwordRegister").value;
+    console.log(passwordRegister)
+
+    const Users = JSON.parse(localStorage.getItem("users")) || []
+    const validUser = Users.find(user => user.email === emailRegister && user.password === passwordRegister);
+    if (!validUser) {
+        return alert("Usuario o contraseña incorrecta");
+    }
+
+    activeSession(validUser);
 
     localStorage.setItem('login_success', JSON.stringify(validUser))
 
     // ------------------ CERRAR SESION -----------
-
-    const userLoginSucces = JSON.parse(localStorage.getItem('login_success')) || false;
 
     const logOut = document.querySelector(".messageSession__logOutIcon");
 
@@ -288,8 +302,24 @@ loginFormUser.addEventListener("click", () => {
         window.location.href = "index.html"
     });
 
-
+    //const userLoginSucces = JSON.parse(localStorage.getItem('login_success')) || false;
+    
 });
+//--------------- MANTIENE LA SESION INICIADA -----------
+const userLoginSucces = JSON.parse(localStorage.getItem('login_success')) || false;
+    if (userLoginSucces) {
+      activeSession(userLoginSucces);
+
+// ------------------ CERRAR SESION -----------
+    const logOut = document.querySelector(".messageSession__logOutIcon");
+
+    logOut.addEventListener("click", () => {
+        alert("Sesion Cerrada");
+        localStorage.removeItem('login_success');
+        window.location.href = "shop.html"
+    });
+    
+}
 
 /*----------------- RESULTADOS DE LA BUSQUEDA-------------------*/
 
@@ -384,7 +414,7 @@ const createItemRent = (item) => {
 
             const infoItemResolution = document.createElement("img");
             infoItemResolution.classList.add("infoItem__resolution")
-            infoItemResolution.src = "/img/icons/—Pngtree—4k ultra hd png image_7899952.png";
+            infoItemResolution.src = "/img/icons/4k-logo.png";
             infoItem.appendChild(infoItemResolution);
 
             const infoItemGenre = document.createElement("div");

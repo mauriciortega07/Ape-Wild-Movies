@@ -82,13 +82,22 @@ body {
                     display: flex;
                     font-family: "Bebas Neue", 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
                     font-size: clamp(0.3rem, 2vw, 5rem);
-                    align-content: center;
+                    align-items: center;
                     //padding: 2vw;
                     color: #ffff;
                     transition: all 0.25s ease;
                     cursor: pointer;
                     width: 100%;
-                    justify-content: space-evenly;
+                    justify-content: space-between;
+
+                    &__shoppingIcon,
+                    &__logOutIcon {
+                        width: 2.3vw;
+
+                        &--Image {
+                            width: 100%;
+                        }
+                    }
 
                 }
             }
@@ -263,7 +272,7 @@ body {
                         transition: all 0.25s ease;
                         //margin: 0.625rem;
                         //height: 20rem;
-                        cursor: pointer;
+                        //cursor: pointer;
                         display: flex;
                         flex-direction: row;
                         color: #ffff;
@@ -335,6 +344,7 @@ body {
 
                                 &--icon {
                                     width: 2vw;
+                                    cursor: pointer;
 
                                     .addCartImage {
                                         width: 100%;

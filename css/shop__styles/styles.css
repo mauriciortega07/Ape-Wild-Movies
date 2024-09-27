@@ -149,12 +149,18 @@ body header .headerContainer__session .messageSession {
   display: flex;
   font-family: "Bebas Neue", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: clamp(0.3rem, 2vw, 5rem);
-  align-content: center;
+  align-items: center;
   color: white;
   transition: all 0.25s ease;
   cursor: pointer;
   width: 100%;
-  justify-content: space-evenly;
+  justify-content: space-between;
+}
+body header .headerContainer__session .messageSession__shoppingIcon, body header .headerContainer__session .messageSession__logOutIcon {
+  width: 2.3vw;
+}
+body header .headerContainer__session .messageSession__shoppingIcon--Image, body header .headerContainer__session .messageSession__logOutIcon--Image {
+  width: 100%;
 }
 body header .loginForm {
   display: flex;
@@ -285,7 +291,6 @@ body main .contentFlex__productsGrid--grid .productsGrid__item {
   font-family: "Quicksand", "Courier New", Courier, monospace;
   padding: 1vw;
   transition: all 0.25s ease;
-  cursor: pointer;
   display: flex;
   flex-direction: row;
   color: white;
@@ -347,6 +352,7 @@ body main .contentFlex__productsGrid--grid .productsGrid__item .infoItem__addCar
 }
 body main .contentFlex__productsGrid--grid .productsGrid__item .infoItem__addCart--icon {
   width: 2vw;
+  cursor: pointer;
 }
 body main .contentFlex__productsGrid--grid .productsGrid__item .infoItem__addCart--icon .addCartImage {
   width: 100%;

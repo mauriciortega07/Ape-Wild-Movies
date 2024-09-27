@@ -201,20 +201,9 @@ closeElementSigninForm.addEventListener("click", () => {
     document.querySelector(".signinForm").style.opacity = "0";
 })
 
-//------ CLASE PARA LA CREACION DE NUEVOS USUARIOS
+// ---------------------------------- FUNCION DE REGISTRO DE USUARIOS ------------------------
 
-class User {
-    constructor(name, lastname, email, password) {
-        this.name = name;
-        this.lastname = lastname;
-        this.email = email;
-        this.password = password;
-    }
-};
-
-// ------- FUNCION DE REGISTRO DE USUARIOS
-
-// ------- OBTENEMOS LOS VALORES DEL USUARIO A REGISTRAR
+// -------------- OBTENEMOS LOS VALORES DEL USUARIO A REGISTRAR Y SE REGISTRA -----------
 
 const signinFormUser = document.querySelector(".signinForm__button--send");
 signinFormUser.addEventListener("click", () => {
@@ -241,19 +230,9 @@ signinFormUser.addEventListener("click", () => {
 
 // ------------------ INICIO DE SESION CON LOS USUARIOS REGISTRADOS
 
-const loginFormUser = document.querySelector(".loginForm__button--send");
-loginFormUser.addEventListener("click", () => {
-    const emailRegister = document.querySelector(".emailRegister").value;
-    console.log(emailRegister)
-    const passwordRegister = document.querySelector(".passwordRegister").value;
-    console.log(passwordRegister)
-
-    const Users = JSON.parse(localStorage.getItem("users")) || []
-    const validUser = Users.find(user => user.email === emailRegister && user.password === passwordRegister);
-    if (!validUser) {
-        return alert("Usuario o contraseña incorrecta");
-    }
-
+/*------- FUNCION QUE CREA LA TARJETA DE BIENVENIDA AL INICIAR SESION, AGREGA 
+ICONOS DE SHOPPING Y DE LOGOUT*/
+const activeSession = (validUser) => {
     // ----- DESAPARECEN LAS OPCIONES DE SESION --------------------
     const headerContainerSession = document.querySelector(".headerContainer__session");
     const loginSigin = document.querySelector(".loginSigin").style.display = "none";
@@ -269,6 +248,16 @@ loginFormUser.addEventListener("click", () => {
     message.textContent = `Bienvenido ${validUser.name}`;
     messageContainer.appendChild(message);
 
+    const shoppingIcon = document.createElement("i");
+    shoppingIcon.classList.add("messageSession__shoppingIcon");
+    messageContainer.appendChild(shoppingIcon);
+    const shoppingImage = document.createElement("input");
+    shoppingImage.classList.add("messageSession__shoppingIcon--Image");
+    shoppingImage.type = "image";
+    shoppingImage.src = "/img/icons/shopping-bag.svg";
+    shoppingImage.alt = "Icono de bolsa de compra";
+    shoppingIcon.appendChild(shoppingImage);
+
     const logOutIcon = document.createElement("i");
     logOutIcon.classList.add("messageSession__logOutIcon");
     messageContainer.appendChild(logOutIcon);
@@ -283,12 +272,26 @@ loginFormUser.addEventListener("click", () => {
 
     document.querySelector(".loginForm").style.visibility = "hidden"
     document.querySelector(".loginForm").style.opacity = "0";
+}
+
+const loginFormUser = document.querySelector(".loginForm__button--send");
+loginFormUser.addEventListener("click", () => {
+    const emailRegister = document.querySelector(".emailRegister").value;
+    console.log(emailRegister)
+    const passwordRegister = document.querySelector(".passwordRegister").value;
+    console.log(passwordRegister)
+
+    const Users = JSON.parse(localStorage.getItem("users")) || []
+    const validUser = Users.find(user => user.email === emailRegister && user.password === passwordRegister);
+    if (!validUser) {
+        return alert("Usuario o contraseña incorrecta");
+    }
+    activeSession(validUser);
 
     localStorage.setItem('login_success', JSON.stringify(validUser))
 
-    // ------------------ CERRAR SESION -----------
 
-    const userLoginSucces = JSON.parse(localStorage.getItem('login_success')) || false;
+    // ------------------ CERRAR SESION -----------
 
     const logOut = document.querySelector(".messageSession__logOutIcon");
 
@@ -297,10 +300,21 @@ loginFormUser.addEventListener("click", () => {
         localStorage.removeItem('login_success');
         window.location.href = "index.html"
     });
-
-
 });
 
+//--------------- MANTIENE LA SESION INICIADA -----------
+const userLoginSucces = JSON.parse(localStorage.getItem('login_success')) || false;
+    if (userLoginSucces) {
+      activeSession(userLoginSucces);
+// ------------------ CERRAR SESION -----------
+    const logOut = document.querySelector(".messageSession__logOutIcon");
+
+    logOut.addEventListener("click", () => {
+        alert("Sesion Cerrada");
+        localStorage.removeItem('login_success');
+        window.location.href = "index.html"
+    });   
+}
 
 /*-----------------SECCION DE SHOWS---------------------*/
 
