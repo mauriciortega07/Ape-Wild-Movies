@@ -132,6 +132,7 @@ const createSigninForm = () => {
     nameContainer.classList.add("signinForm__user--name", "nameUser");
     nameContainer.type = "text";
     nameContainer.placeholder = "Introduce tu nombre";
+    nameContainer.required = "true";
     divContainerUser.appendChild(nameContainer);
 
     const signinTitleLastName = document.createElement("h3");
@@ -143,6 +144,7 @@ const createSigninForm = () => {
     lastNameContainer.classList.add("signinForm__user--name", "lastNameUser");
     lastNameContainer.type = "text";
     lastNameContainer.placeholder = "Introduce tu apellido";
+    lastNameContainer.required = "true";
     divContainerUser.appendChild(lastNameContainer);
 
     const signinTitleMail = document.createElement("h3");
@@ -154,6 +156,7 @@ const createSigninForm = () => {
     mailContainer.classList.add("signinForm__user--name", "emailUser");
     mailContainer.type = "email";
     mailContainer.placeholder = "Introduce tu correo";
+    mailContainer.required = "true";
     divContainerUser.appendChild(mailContainer);
 
     const signinTitlePass = document.createElement("h3");
@@ -165,6 +168,7 @@ const createSigninForm = () => {
     passContainer.classList.add("signinForm__user--name", "passUser");
     passContainer.type = "password";
     passContainer.placeholder = "Introduce tu contraseña";
+    passContainer.required = "true";
     divContainerUser.appendChild(passContainer);
 
 
@@ -248,19 +252,12 @@ const activeSession = (validUser) => {
     message.textContent = `Bienvenido ${validUser.name}`;
     messageContainer.appendChild(message);
 
-    const shoppingIcon = document.createElement("i");
-    shoppingIcon.classList.add("messageSession__shoppingIcon");
-    messageContainer.appendChild(shoppingIcon);
-    const shoppingImage = document.createElement("input");
-    shoppingImage.classList.add("messageSession__shoppingIcon--Image");
-    shoppingImage.type = "image";
-    shoppingImage.src = "/img/icons/shopping-bag.svg";
-    shoppingImage.alt = "Icono de bolsa de compra";
-    shoppingIcon.appendChild(shoppingImage);
+
 
     const logOutIcon = document.createElement("i");
     logOutIcon.classList.add("messageSession__logOutIcon");
     messageContainer.appendChild(logOutIcon);
+
     const logOutImage = document.createElement("input");
     logOutImage.classList.add("messageSession__logOutIcon--Image");
     logOutImage.type = "image";

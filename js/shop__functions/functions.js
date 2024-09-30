@@ -168,13 +168,11 @@ const createSigninForm = () => {
     passContainer.placeholder = "Introduce tu contraseña";
     divContainerUser.appendChild(passContainer);
 
-
     const botonSend = document.createElement("input");
     botonSend.classList.add("signinForm__button--send");
     botonSend.type = "button";
     botonSend.value = "Registrarse";
     divContainerUser.appendChild(botonSend);
-
 
     const headerContainer = document.querySelector("header").appendChild(fragment);
 
@@ -182,10 +180,8 @@ const createSigninForm = () => {
 
 }
 
-
 //------ INVOCA LA FUNCION DEL FORMULARIO DE REGISTRO
 createSigninForm();
-
 
 //------- EVENTOS PARA CERRAR EL FORMULARIO DE REGISTRO
 const siginElement = document.querySelector(".signin");
@@ -252,13 +248,37 @@ const activeSession = (validUser) => {
     const shoppingIcon = document.createElement("i");
     shoppingIcon.classList.add("messageSession__shoppingIcon");
     messageContainer.appendChild(shoppingIcon);
+    
     const shoppingImage = document.createElement("input");
     shoppingImage.classList.add("messageSession__shoppingIcon--Image");
     shoppingImage.type = "image";
     shoppingImage.src = "/img/icons/shopping-bag.svg";
     shoppingImage.alt = "Icono de bolsa de compra";
+
+    const counterIcon = document.createElement("div");
+    counterIcon.classList.add("countIcon");
+    messageContainer.appendChild(counterIcon);
+    const counter = document.createElement("span");
+    counter.classList.add("counter");
+    counter.textContent = "0"
+    counterIcon.appendChild(counter);
+
+
+    //---------------EVENTOS DE CERRAR Y ABRIR LA BOLSA DE COMPRAS
+    shoppingIcon.addEventListener("click", ()=>{
+        document.querySelector(".shoppingBag").style.opacity = "1";
+        document.querySelector(".shoppingBag").style.visibility = "visible";
+        console.log("click");
+    });
+
+    document.querySelector(".shoppingBag__close--image").addEventListener("click", ()=>{
+        document.querySelector(".shoppingBag").style.opacity = "0";
+        document.querySelector(".shoppingBag").style.visibility = "hidden";
+
+    });
     shoppingIcon.appendChild(shoppingImage);
 
+    //--------------- SE CREA EL ICONO DE CERRAR SESSION -------------------
     const logOutIcon = document.createElement("i");
     logOutIcon.classList.add("messageSession__logOutIcon");
     messageContainer.appendChild(logOutIcon);
@@ -268,12 +288,15 @@ const activeSession = (validUser) => {
     logOutImage.src = "/img/icons/log-out.svg";
     logOutImage.alt = "Icono de cerrar sesion";
     logOutIcon.appendChild(logOutImage);
-
+    //------------ SE AGREGA EL NUEVO FRAGMENTO DE LA TARJETA DE BIENVENIDA
     headerContainerSession.appendChild(fragment);
 
+    //--------------- DESAPARACE EL LOGIN
     document.querySelector(".loginForm").style.visibility = "hidden"
     document.querySelector(".loginForm").style.opacity = "0";
 }
+
+//---------------- INICIO DE SESION ---------------
 
 const loginFormUser = document.querySelector(".loginForm__button--send");
 loginFormUser.addEventListener("click", () => {
@@ -281,17 +304,17 @@ loginFormUser.addEventListener("click", () => {
     console.log(emailRegister)
     const passwordRegister = document.querySelector(".passwordRegister").value;
     console.log(passwordRegister)
-
+    //------- VALIDACION DE QUE EL USUARIO EXISTA EN EL LOCALSTORAGE
     const Users = JSON.parse(localStorage.getItem("users")) || []
     const validUser = Users.find(user => user.email === emailRegister && user.password === passwordRegister);
     if (!validUser) {
         return alert("Usuario o contraseña incorrecta");
-    }
-
+    } 
+    /*SI EL USUARIO EXISTE SE CREA UN MENU CON UN MENSAJE DE BIENVENIDA E ICONOS DE PERFIL*/
     activeSession(validUser);
 
+    /*AL INICIAR SESION SE REGISTRA EN EL LOCALSTORAGE PARA LA VALIDACION DE SESION*/
     localStorage.setItem('login_success', JSON.stringify(validUser))
-
     // ------------------ CERRAR SESION -----------
 
     const logOut = document.querySelector(".messageSession__logOutIcon");
@@ -301,7 +324,6 @@ loginFormUser.addEventListener("click", () => {
         localStorage.removeItem('login_success');
         window.location.href = "index.html"
     });
-
     //const userLoginSucces = JSON.parse(localStorage.getItem('login_success')) || false;
     
 });
@@ -310,7 +332,7 @@ const userLoginSucces = JSON.parse(localStorage.getItem('login_success')) || fal
     if (userLoginSucces) {
       activeSession(userLoginSucces);
 
-// ------------------ CERRAR SESION -----------
+// ------------------EVENTO DE CERRAR SESION -----------
     const logOut = document.querySelector(".messageSession__logOutIcon");
 
     logOut.addEventListener("click", () => {
@@ -321,7 +343,7 @@ const userLoginSucces = JSON.parse(localStorage.getItem('login_success')) || fal
     
 }
 
-/*----------------- RESULTADOS DE LA BUSQUEDA-------------------*/
+/*----------------- RESULTADOS DE LA BUSQUEDA DE TITULOS-------------------*/
 
 //crea las tarjetas de info. cada show que arroja la busqueda
 const showsResults = (showItem) => {
@@ -335,7 +357,7 @@ const showsResults = (showItem) => {
     //console.log(showsSearchImg.src.innerHTML = showItem.image.medium)
 
     if (showItem.show.image === null) {
-        showItem.show.image = "/img/icons/no-photo-icon.png"
+        showItem.show.image = "/img/49f6b89bd291722c227e312eaa7d04e4380b4c0b7611bf68a82c328d2c00fcb9-width317-quality60.webp"
         showsSearchImg.src = showItem.show.image;
     } else {
         showsSearchImg.src = showItem.show.image.medium;
@@ -355,7 +377,7 @@ const showsResults = (showItem) => {
     console.log(showItem);
 
     showItem.show.genres.forEach(genre => {
-        console.log(genre);
+        //console.log(genre);
         const genreText = document.createElement("p");
         genreText.classList.add("infoshowsResult__genre");
         genreText.textContent = genre;
@@ -385,6 +407,8 @@ const showsResults = (showItem) => {
 
     showsSearchContainerItem.appendChild(infoshowsResult);
 
+    const pageNumber = document.querySelector(".pageNumber");
+    pageNumber.style.display = "none";
 
     return showsSearchContainerItem;
 
@@ -396,7 +420,7 @@ const showsResults = (showItem) => {
 const createItemRent = (item) => {
     const productsGridItem = document.createElement("div");
     productsGridItem.classList.add("productsGrid__item");
-
+    
         const itemCover = document.createElement("img");
         itemCover.classList.add("itemCover");
         itemCover.src = item.srcImageComplete;
@@ -440,10 +464,19 @@ const createItemRent = (item) => {
            
             infoItem.appendChild(infoItemSummary);
 
-            const infoItemPrice = document.createElement("p");
-            infoItemPrice.classList.add("infoItem__price");
-            infoItemPrice.innerText = `$150.00 x 8 dias`;
-            infoItem.appendChild(infoItemPrice);
+            const infoItemPrice = document.createElement("div");
+            infoItemPrice.classList.add("infoItem__price")
+            infoItem.append(infoItemPrice);
+
+                const ItemDenomination = document.createElement("p");
+                ItemDenomination.classList.add("ItemDenomination");
+                ItemDenomination.innerText = `$`;
+                infoItemPrice.appendChild(ItemDenomination);
+
+                const ItemPrice = document.createElement("p");
+                ItemPrice.classList.add("ItemPrice");
+                ItemPrice.innerText = `150.00`;
+                infoItemPrice.appendChild(ItemPrice);
 
             const infoItemAddCart = document.createElement("div");
             infoItemAddCart.classList.add("infoItem__addCart");
@@ -453,35 +486,106 @@ const createItemRent = (item) => {
                 addCartIcon.classList.add("infoItem__addCart--icon");
                 infoItemAddCart.appendChild(addCartIcon);
 
-                    const addCartImage = document.createElement("img");
+                    const addCartImage = document.createElement("input");
                     addCartImage.classList.add("addCartImage");
+                    addCartImage.type = "image"
                     addCartImage.src = "img/icons/plus-circle.svg";
                     addCartImage.alt = `icono de agregar producto al carrito`;
                     addCartIcon.appendChild(addCartImage);
 
-    
+return productsGridItem;
+}
 
-    return productsGridItem;
+const createItemBag = boton => {
+    const fragment = document.createDocumentFragment();
+
+    const itemRenta = boton.parentElement;
+    const itemPadreRenta = boton.parentElement.parentElement;
+    //console.log(itemPadreRenta);
+
+    const itemContainer = document.createElement("div");
+    itemContainer.classList.add("bagItem");
+    fragment.appendChild(itemContainer);
+
+        const imageCover = document.createElement("img");
+        imageCover.classList.add("bagItem__cover");
+        const imageCoverSrc = itemPadreRenta.firstElementChild;
+        imageCover.src = imageCoverSrc.getAttribute("src");
+        itemContainer.appendChild(imageCover);
+        //console.log(imageCoverSrc.src)
+
+        const productTitle = document.createElement("p");
+        productTitle.classList.add("bagItem__title");
+        //console.log(itemRenta.firstElementChild)
+        const bagItemTitle = itemRenta.firstElementChild;
+        productTitle.textContent = bagItemTitle.innerText;
+        itemContainer.appendChild(productTitle);
+
+        const denominationTitle = document.createElement("p");
+        denominationTitle.classList.add("bagItem__denomination");
+        const bagItemDenomination = itemRenta.lastElementChild.previousSibling.firstElementChild;
+        //console.log(bagItemDenomination);
+        denominationTitle.textContent = bagItemDenomination.innerText;
+        itemContainer.appendChild(denominationTitle);
+
+        const priceTitle = document.createElement("p");
+        priceTitle.classList.add("bagItem__price");
+        const bagItemPrice = bagItemDenomination.nextElementSibling;
+        priceTitle.textContent = bagItemPrice.innerText;
+        itemContainer.appendChild(priceTitle);
+
+        const deleteItem = document.createElement("i");
+        deleteItem.classList.add("bagItem__iconRemove");
+        itemContainer.appendChild(deleteItem)
+            const deleteImage = document.createElement("img");
+            deleteImage.classList.add("imageRemove");
+            deleteImage.src = "img/icons/trash-2.svg";
+            deleteImage.alt = "Icono de eliminar producto";
+            deleteItem.appendChild(deleteImage);
+        
+            //EVENTO PARA ELIMINAR UN ARTICULO DE LA BOLSA DE COMPRAS
+            deleteImage.addEventListener("click", () => {
+            const itemParent = deleteImage.parentElement.parentElement;
+            itemParent.remove();
+
+            const productsCount = document.querySelector(".shoppingBag__items");
+            console.log(productsCount)
+            const bagItems = productsCount.childNodes.length-1;
+            const counterItems = document.querySelector(".counter");
+            console.log(bagItems)
+            counterItems.textContent = bagItems
+        });
+
+    //Activacion del badge
+    //const counterIcon = document.querySelector(".countIcon");
+    //Se obtiene el padre de los elementos agregados del carrito
+    const productsBag = document.querySelector(".shoppingBag__items")
+    //Se obtiene la cantidad de productos en la bolsa de productos
+    const productsCount = productsBag.childNodes.length;
+    console.log(productsCount);
+    const counterItems = document.querySelector(".counter");
+    counterItems.innerHTML = productsCount
+
+    document.querySelector(".shoppingBag__items").appendChild(fragment);
 }
 
 //------------------------------------------ FUNCIONES --------------------------------------------
 
 /*---------------------------------FUNCIONES ASYNC/AWAIT CON AXIOS---------------------*/
-/*------OBTIENE RESPUESTA DE LA API PARA ACCEDER A LA CONFIGURTACION DE LA URL BASE DE LAS IMAGENES-------*/
+/*------OBTIENE RESPUESTA DE LA API PARA ACCEDER A LA CONFIGURACION DE LA URL BASE DE LAS IMAGENES-------*/
 const loadItemsRent = async () => {
     try {
         const responseConfig = await axios.get("https://api.themoviedb.org/3/configuration?api_key=9ccb1e5ad211eb690aa7441e5b39bef2");
-        //console.log(responseConfig.data.images.backdrop_sizes[3]);
         const urlBase = `${responseConfig.data.images.base_url}${responseConfig.data.images.backdrop_sizes[3]}`;
-        //console.log(urlBase);
+/*------OBTIENE RESPUESTA DE LA API PARA ACCEDER A LAS PELICULAS-------*/
         try {
             const responseItemsRent = await axios.get("https://api.themoviedb.org/3/movie/popular?api_key=9ccb1e5ad211eb690aa7441e5b39bef2", {params: {language: 'es-MX', page:'1'}});
             //console.log(responseItemsRent);
             const itemsRent = responseItemsRent.data.results;
             //console.log(itemsRent);
-
+            //POR CADA ITEM DE LA LISTA DE RESULTADOS SE CONSTRUYE SU TARJETA DE INFORMACION
             for (const item of itemsRent) {
-                console.log(item);
+                //console.log(item);
                 const posterPath = item.poster_path;
                 item.url_base = urlBase
                 const urlImageBase = item.url_base;
@@ -495,8 +599,30 @@ const loadItemsRent = async () => {
                 //console.log(genre);
                 const cardItemRent = createItemRent(item);
                 const productsGrid = document.querySelector(".contentFlex__productsGrid--grid");
-                productsGrid.appendChild(cardItemRent);                  
+                productsGrid.appendChild(cardItemRent);   
             }
+
+    //------------------------- SHOPPINGBAG --------------
+    //----------------- EVENTO DEL BOTON PARA AGREGAR ITEMS A LA BOLSA DE COMPRAS -------
+        const addShoppingBag = document.querySelectorAll(".infoItem__addCart");
+
+        const addProductButton = boton => {
+            boton.addEventListener("click", () => {
+                //----VALIDA SI HAY UN USUARIO EN SESSION PARA PODER AGREGAR PRODUCTSO A LA BOLSA DE COMPRAS
+                const userLoginSucces = JSON.parse(localStorage.getItem('login_success')) || false;
+                if (!userLoginSucces){
+                    alert(`DEBES INICIAR SESION PARA AGREGAR UN PRODUCTO A LA BOLSA DE COMPRAS`);
+                } else {
+                    //SE CREA EL ITEM EN LA BOLSA DE COMPRAS
+                    for (let i = 0; i < 1; i++){
+                        
+                        createItemBag(boton);
+                    }
+                }
+            });
+        }
+
+        addShoppingBag.forEach(addProductButton);
 
         } catch(error) {
             console.error(`error al cargar los datos de las peliculas${error}`);
@@ -507,8 +633,165 @@ const loadItemsRent = async () => {
     }
 }
 
-document.addEventListener("DOMContentLoaded", loadItemsRent);
+document.addEventListener("DOMContentLoaded", loadItemsRent());
+/* -------- EVENTO QUE CARGA LA PRIMERA PAGINA DE LAS PELICULAS A RENTAR */
 
+const pageOne = document.querySelector(".pageNumber__list").firstElementChild;
+pageOne.addEventListener("click", ()=>{
+    const pageNumberTwo = document.querySelector(".pageNumber__list").firstElementChild.nextElementSibling;
+    const pageNumberThree = pageNumberTwo.nextElementSibling;
+    loadItemsRent();
+    document.querySelector(".contentFlex__productsGrid--grid").innerHTML = '';
+    pageOne.style.textDecoration="underline";
+    pageNumberTwo.style.textDecoration="none";
+    pageNumberThree.style.textDecoration="none";
+
+});
+
+
+/* --------SE CARGA LA SEGUNDA PAGINA DE RESULTADOS DE PELICULAS PARA RENTAR ------ */
+
+const loadItemsRentPage2 = async () => {
+    try {
+        const responseConfig = await axios.get("https://api.themoviedb.org/3/configuration?api_key=9ccb1e5ad211eb690aa7441e5b39bef2");
+        const urlBase = `${responseConfig.data.images.base_url}${responseConfig.data.images.backdrop_sizes[3]}`;
+/*------OBTIENE RESPUESTA DE LA API PARA ACCEDER A LAS PELICULAS-------*/
+        try {
+            const responseItemsRent = await axios.get("https://api.themoviedb.org/3/movie/popular?api_key=9ccb1e5ad211eb690aa7441e5b39bef2", {params: {language: 'es-MX', page:'2'}});
+            //console.log(responseItemsRent);
+            const itemsRent = responseItemsRent.data.results;
+            //console.log(itemsRent);
+            //POR CADA ITEM DE LA LISTA DE RESULTADOS SE CONSTRUYE SU TARJETA DE INFORMACION
+            for (const item of itemsRent) {
+                //console.log(item);
+                const posterPath = item.poster_path;
+                item.url_base = urlBase
+                const urlImageBase = item.url_base;
+                //console.log(item);
+                const srcComplete = `${urlImageBase}${posterPath}`;
+                item.srcImageComplete = srcComplete;
+                //console.log(srcComplete);
+                //const sourceImage = 
+                item.genreBroad = ["Accion", "Aventura", "Drama"];
+                const genre = item.genreBroad;
+                //console.log(genre);
+                const cardItemRent = createItemRent(item);
+                const productsGrid = document.querySelector(".contentFlex__productsGrid--grid");
+                productsGrid.appendChild(cardItemRent);   
+            }
+
+    //------------------------- SHOPPINGBAG --------------
+    //----------------- EVENTO DEL BOTON PARA AGREGAR ITEMS A LA BOLSA DE COMPRAS -------
+        const addShoppingBag = document.querySelectorAll(".infoItem__addCart");
+
+        const addProductButton = boton => {
+            boton.addEventListener("click", () => {
+                //----VALIDA SI HAY UN USUARIO EN SESSION PARA PODER AGREGAR PRODUCTSO A LA BOLSA DE COMPRAS
+                const userLoginSucces = JSON.parse(localStorage.getItem('login_success')) || false;
+                if (!userLoginSucces){
+                    alert(`DEBES INICIAR SESION PARA AGREGAR UN PRODUCTO A LA BOLSA DE COMPRAS`);
+                } else {
+                    //SE CREA EL ITEM EN LA BOLSA DE COMPRAS
+                    for (let i = 0; i < 1; i++){
+                        
+                        createItemBag(boton);
+                    }
+                }
+            });
+        }
+
+        addShoppingBag.forEach(addProductButton);
+
+        } catch(error) {
+            console.error(`error al cargar los datos de las peliculas${error}`);
+        }
+
+    } catch (error) {
+        console.erro(`error al cargar los datos de configuracion de imagenes${error}`);
+    }
+}
+
+const pageTwo = document.querySelector(".pageNumber__list").firstElementChild.nextElementSibling;
+pageTwo.addEventListener("click", () => {
+    const pageNumberList = document.querySelector(".pageNumber__list")
+    loadItemsRentPage2();
+    document.querySelector(".contentFlex__productsGrid--grid").innerHTML = '';
+    pageTwo.style.textDecoration="underline";
+    pageNumberList.firstElementChild.style.textDecoration="none";
+    pageNumberList.lastElementChild.style.textDecoration="none";
+});
+
+/* --------SE CARGA LA SEGUNDA PAGINA DE RESULTADOS DE PELICULAS PARA RENTAR ------ */
+
+const loadItemsRentPage3 = async () => {
+    try {
+        const responseConfig = await axios.get("https://api.themoviedb.org/3/configuration?api_key=9ccb1e5ad211eb690aa7441e5b39bef2");
+        const urlBase = `${responseConfig.data.images.base_url}${responseConfig.data.images.backdrop_sizes[3]}`;
+/*------OBTIENE RESPUESTA DE LA API PARA ACCEDER A LAS PELICULAS-------*/
+        try {
+            const responseItemsRent = await axios.get("https://api.themoviedb.org/3/movie/popular?api_key=9ccb1e5ad211eb690aa7441e5b39bef2", {params: {language: 'es-MX', page:'3'}});
+            //console.log(responseItemsRent);
+            const itemsRent = responseItemsRent.data.results;
+            //console.log(itemsRent);
+            //POR CADA ITEM DE LA LISTA DE RESULTADOS SE CONSTRUYE SU TARJETA DE INFORMACION
+            for (const item of itemsRent) {
+                //console.log(item);
+                const posterPath = item.poster_path;
+                item.url_base = urlBase
+                const urlImageBase = item.url_base;
+                //console.log(item);
+                const srcComplete = `${urlImageBase}${posterPath}`;
+                item.srcImageComplete = srcComplete;
+                //console.log(srcComplete);
+                //const sourceImage = 
+                item.genreBroad = ["Accion", "Aventura", "Drama"];
+                const genre = item.genreBroad;
+                //console.log(genre);
+                const cardItemRent = createItemRent(item);
+                const productsGrid = document.querySelector(".contentFlex__productsGrid--grid");
+                productsGrid.appendChild(cardItemRent);   
+            }
+
+    //------------------------- SHOPPINGBAG --------------
+    //----------------- EVENTO DEL BOTON PARA AGREGAR ITEMS A LA BOLSA DE COMPRAS -------
+        const addShoppingBag = document.querySelectorAll(".infoItem__addCart");
+
+        const addProductButton = boton => {
+            boton.addEventListener("click", () => {
+                //----VALIDA SI HAY UN USUARIO EN SESSION PARA PODER AGREGAR PRODUCTSO A LA BOLSA DE COMPRAS
+                const userLoginSucces = JSON.parse(localStorage.getItem('login_success')) || false;
+                if (!userLoginSucces){
+                    alert(`DEBES INICIAR SESION PARA AGREGAR UN PRODUCTO A LA BOLSA DE COMPRAS`);
+                } else {
+                    //SE CREA EL ITEM EN LA BOLSA DE COMPRAS
+                    for (let i = 0; i < 1; i++){
+                        
+                        createItemBag(boton);
+                    }
+                }
+            });
+        }
+
+        addShoppingBag.forEach(addProductButton);
+
+        } catch(error) {
+            console.error(`error al cargar los datos de las peliculas${error}`);
+        }
+
+    } catch (error) {
+        console.erro(`error al cargar los datos de configuracion de imagenes${error}`);
+    }
+}
+
+const pageThree = document.querySelector(".pageNumber__list").lastElementChild;
+pageThree.addEventListener("click", () => {
+    const pageNumberList = document.querySelector(".pageNumber__list")
+    loadItemsRentPage3();
+    document.querySelector(".contentFlex__productsGrid--grid").innerHTML = '';
+    pageThree.style.textDecoration="underline";
+    pageNumberList.firstElementChild.style.textDecoration="none";
+    pageNumberList.firstElementChild.nextElementSibling.style.textDecoration="none";
+});
 
 /*---------------------------------FUNCIONES PROMISES CON AXIOS---------------------*/
 /*------OBTIENE RESPUESTA DE LA API PARA BUSCAR SHOWS POR SU NOMBRE-------*/
@@ -537,7 +820,7 @@ document.querySelector(".searchButton").addEventListener("click", () => {
         .then(result => {
             const resultShows = result.data;
             resultShows.length = 9;
-            console.log(resultShows);
+            //console.log(resultShows);
 
             const backContentMain = document.querySelector(".showsResult__title--backContentMain");
             backContentMain.style.visibility = "visible";
@@ -559,8 +842,9 @@ document.querySelector(".searchButton").addEventListener("click", () => {
 
                 //const freeMovies = document.querySelector(".freeMovies");
                 //freeMovies.innerHTML = '';
-
-                //console.log(showItem);
+                const productsGrid = document.querySelector(".contentFlex__productsGrid");
+                productsGrid.innerHTML = ''
+                //console.log(showItemSearch);
                 const resultCard = showsResults(showItemSearch);
                 //console.log(showItem);
                 showsResultContainer.appendChild(resultCard);
@@ -594,6 +878,8 @@ document.getElementById("searchText").addEventListener("keydown", function (e) {
 
                 const showsResultContainer = document.querySelector(".showsResult__container");
 
+                const productsGrid = document.querySelector(".contentFlex__productsGrid");
+                productsGrid.innerHTML = ''
                 //const freeShows = document.querySelector(".freeShows");
                 //freeShows.innerHTML = '';
 
@@ -612,3 +898,6 @@ document.getElementById("searchText").addEventListener("keydown", function (e) {
     }
 
 });
+
+
+

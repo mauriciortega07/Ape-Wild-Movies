@@ -162,6 +162,107 @@ body header .headerContainer__session .messageSession__shoppingIcon, body header
 body header .headerContainer__session .messageSession__shoppingIcon--Image, body header .headerContainer__session .messageSession__logOutIcon--Image {
   width: 100%;
 }
+body header .headerContainer__session .messageSession .countIcon {
+  font-size: 18px;
+  position: absolute;
+  border-radius: 50%;
+  right: 71px;
+  top: 41px;
+  background-color: #f16666;
+  width: 20px;
+  padding: 1px;
+  text-align: center;
+  color: #fff;
+  font-family: "Bebas Neue", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+body header .shoppingBag {
+  border-radius: 10px;
+  background-color: #fff;
+  color: #000;
+  font-family: "Bebas Neue", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  width: 39.588vw;
+  position: relative;
+  left: 55.8vw;
+  top: -1.5vw;
+  padding: 25px;
+  box-sizing: border-box;
+  box-shadow: -19px -1px 22px -15px rgba(0, 0, 0, 0.3);
+  transition: all 0.25s ease-in-out;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  height: 75%;
+  visibility: hidden;
+  opacity: 0;
+}
+body header .shoppingBag::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+body header .shoppingBag::-webkit-scrollbar-button:increment {
+  display: none;
+}
+body header .shoppingBag::-webkit-scrollbar:vertical {
+  width: 0.8vw;
+}
+body header .shoppingBag::-webkit-scrollbar-thumb {
+  background-color: #797979;
+  border-radius: 30px;
+  border: 2px solid #797979;
+}
+body header .shoppingBag::-webkit-scrollbar-track {
+  border-radius: 20px;
+}
+body header .shoppingBag__close {
+  display: inline-block;
+  width: 1.979vw;
+}
+body header .shoppingBag__close--image {
+  width: 100%;
+  cursor: pointer;
+}
+body header .shoppingBag__title {
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 400;
+  -webkit-text-emphasis: i;
+          text-emphasis: i;
+  padding: 10px 0;
+  box-sizing: border-box;
+  margin: 0px;
+  font-style: italic;
+}
+body header .shoppingBag__items .bagItem {
+  border-bottom: 1px solid #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  box-sizing: border-box;
+  flex-direction: row;
+}
+body header .shoppingBag__items .bagItem__cover {
+  width: 60px;
+}
+body header .shoppingBag__items .bagItem__title {
+  text-align: center;
+  margin: 0;
+  width: 50%;
+}
+body header .shoppingBag__items .bagItem__denomination {
+  font-weight: 500;
+  margin: 0;
+}
+body header .shoppingBag__items .bagItem__price {
+  font-weight: 500;
+  margin: 0;
+}
+body header .shoppingBag__items .bagItem__iconRemove {
+  width: 20px;
+}
+body header .shoppingBag__items .bagItem__iconRemove .imageRemove {
+  width: 100%;
+  cursor: pointer;
+}
 body header .loginForm {
   display: flex;
   background-color: #fff;
@@ -173,7 +274,7 @@ body header .loginForm {
   font-family: "Bebas Neue", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   position: relative;
   left: 63.26vw;
-  top: -2vw;
+  top: -25vw;
   transition: all 0.3s ease-in-out;
   visibility: hidden;
   opacity: 0;
@@ -224,7 +325,7 @@ body header .signinForm {
   font-family: "Bebas Neue", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   position: relative;
   left: 74.26vw;
-  top: -25vw;
+  top: -47.7vw;
   transition: all 0.3s ease-in-out;
   visibility: hidden;
   opacity: 0;
@@ -342,6 +443,7 @@ body main .contentFlex__productsGrid--grid .productsGrid__item .infoItem__summar
   text-align: center;
 }
 body main .contentFlex__productsGrid--grid .productsGrid__item .infoItem__price {
+  display: flex;
   font-weight: 700;
 }
 body main .contentFlex__productsGrid--grid .productsGrid__item .infoItem__addCart--icon {
@@ -496,6 +598,18 @@ body main .contentFlex .showsResult__container--item .infoShow__playContainer--p
 body main .contentFlex .showsResult__container--item .infoMovies__playContainer--playIcon .playImage:hover,
 body main .contentFlex .showsResult__container--item .infoshowsResult__playContainer--playIcon .playImage:hover {
   transform: translateY(-10px);
+}
+body main .pageNumber .pageNumber__list {
+  cursor: pointer;
+  font-size: 2vw;
+  display: flex;
+  color: #fff;
+  justify-content: center;
+  gap: 20px;
+  font-family: "Bebas Neue", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+body main .pageNumber .pageNumber__list li:hover {
+  text-decoration: underline;
 }
 body footer .legal__container {
   display: flex;

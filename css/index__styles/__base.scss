@@ -31,7 +31,7 @@
     flex: 1;
     transition: all 0.25s ease;
     cursor: pointer;
-    
+
 }
 
 @mixin h1Logo {
@@ -82,4 +82,50 @@
     position: relative;
     right: 14.5%;
     bottom: 87%;
+}
+
+@mixin messageSession {
+    display: flex;
+    font-family: "Bebas Neue", 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: clamp(0.3rem, 2vw, 5rem);
+    align-items: center;
+    color: #ffff;
+    transition: all 0.25s ease;
+    cursor: pointer;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+@mixin loginForm {
+    display: flex;
+    background-color: #fff;
+    width: 20vw;
+    flex-direction: column;
+    align-items: center;
+    gap: .3vw;
+    border-radius: 10px;
+    font-family: "Bebas Neue", 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: relative;
+    left: 63.26vw;
+    top: -2vw;
+    transition: all .30s ease-in-out;
+    visibility: hidden;
+    opacity: 0;
+}
+
+@mixin loginFormClose {
+    position: relative;
+    left: -8.709vw;
+    bottom: -0.396vw;
+}
+
+@mixin loginFormButtonSend {
+    width: 6vw;
+    height: 3vw;
+    border-radius: 13px;
+    cursor: pointer;
+    border: solid 1px #d3d3d3;
+    background: azure;
+    font-family: "Quicksand", "Courier New", Courier, monospace;
+    font-weight: 600;
 }

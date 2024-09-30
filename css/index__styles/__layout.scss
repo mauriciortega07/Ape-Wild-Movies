@@ -79,41 +79,26 @@ body {
                 }
 
                 .messageSession {
-                    display: flex;
-                    font-family: "Bebas Neue", 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-                    font-size: clamp(0.3rem, 2vw, 5rem);
-                    align-content: center;
-                    //padding: 2vw;
-                    color: #ffff;
-                    transition: all 0.25s ease;
-                    cursor: pointer;
-                    width: 100%;
-                    justify-content: space-evenly;
+                    @include messageSession;
+
+                    &__shoppingIcon,
+                    &__logOutIcon {
+                        width: 2.3vw;
+
+                        &--Image {
+                            width: 100%;
+                        }
+                    }
                     
                 }
             }
         }
 
         .loginForm{
-            display: flex;
-            background-color: #fff;
-            width: 20vw;
-            flex-direction: column;
-            align-items: center;
-            gap: .3vw;
-            border-radius: 10px;
-            font-family: "Bebas Neue", 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            position: relative;
-            left: 63.26vw;
-            top: -2vw;
-            transition: all .30s ease-in-out;
-            visibility: hidden;
-            opacity: 0;
+            @include loginForm;
 
             &__close {
-                position: relative;
-                left: -110px;
-                bottom: -5px;
+                @include loginFormClose;
 
                 &--icon {
 
@@ -143,14 +128,7 @@ body {
                 }
 
                 &--send {
-                    width: 6vw;
-                    height: 3vw;
-                    border-radius: 13px;
-                    cursor: pointer;
-                    border: solid 1px #d3d3d3;
-                    background: azure;
-                    font-family: "Quicksand", "Courier New", Courier, monospace;
-                    font-weight: 600;
+                    @include loginFormButtonSend;
 
                     &:focus {
                         border: solid 2px #f34343;
