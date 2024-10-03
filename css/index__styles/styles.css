@@ -27,8 +27,10 @@ body header .headerContainer__logo {
   transition: all 0.25s ease;
   cursor: pointer;
 }
-body header .headerContainer__logo:hover {
-  scale: 110%;
+@media (hover: hover) {
+  body header .headerContainer__logo:hover {
+    scale: 110%;
+  }
 }
 body header .headerContainer__logo h1 {
   font-family: "Bebas Neue", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
@@ -66,8 +68,10 @@ body header .headerContainer__menu ul li a {
   text-decoration: none;
   color: #fff;
 }
-body header .headerContainer__menu ul li:hover {
-  text-decoration: underline;
+@media (hover: hover) {
+  body header .headerContainer__menu ul li:hover {
+    text-decoration: underline;
+  }
 }
 body header .headerContainer__search {
   padding: 1vw;
@@ -110,11 +114,13 @@ body header .headerContainer__session ul li {
   font-size: clamp(0.3rem, 1.2vw, 3rem);
   color: white;
 }
-body header .headerContainer__session ul .login:hover {
-  text-decoration: underline;
-}
-body header .headerContainer__session ul .signin:hover {
-  text-decoration: underline;
+@media (hover: hover) {
+  body header .headerContainer__session ul .login:hover {
+    text-decoration: underline;
+  }
+  body header .headerContainer__session ul .signin:hover {
+    text-decoration: underline;
+  }
 }
 body header .headerContainer__session .messageSession {
   display: flex;
@@ -140,7 +146,7 @@ body header .loginForm {
   flex-direction: column;
   align-items: center;
   gap: 0.3vw;
-  border-radius: 10px;
+  border-radius: 0.792vw;
   font-family: "Bebas Neue", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   position: relative;
   left: 63.26vw;
@@ -154,25 +160,44 @@ body header .loginForm__close {
   left: -8.709vw;
   bottom: -0.396vw;
 }
+@media screen and (max-width: 900px) and (min-width: 200px) {
+  body header .loginForm__close {
+    width: 31%;
+    left: -25px;
+    top: 0px;
+  }
+}
 body header .loginForm__close--icon .closeImage {
   cursor: pointer;
+}
+@media screen and (max-width: 900px) and (min-width: 350px) {
+  body header .loginForm__close--icon .closeImage {
+    width: 50%;
+  }
 }
 body header .loginForm__user, body header .loginForm__pass, body header .loginForm__button {
   padding: 1.5vw;
 }
 body header .loginForm__user--title, body header .loginForm__pass--title, body header .loginForm__button--title {
   text-align: center;
-  margin: 6px;
+  margin: 0.475vw;
+  font-size: clamp(0.5rem, 1.3vw, 3rem);
 }
 body header .loginForm__user--text, body header .loginForm__user--name, body header .loginForm__pass--text, body header .loginForm__pass--name, body header .loginForm__button--text, body header .loginForm__button--name {
   border-radius: 5px;
   border: solid 2px #f34343;
+  font-size: clamp(0.3rem, 1.3vw, 3rem);
+}
+@media screen and (max-width: 900px) and (min-width: 200px) {
+  body header .loginForm__user--text, body header .loginForm__user--name, body header .loginForm__pass--text, body header .loginForm__pass--name, body header .loginForm__button--text, body header .loginForm__button--name {
+    border: solid 1px #f34343;
+  }
 }
 body header .loginForm__user--text .textFocus, body header .loginForm__user--name .textFocus, body header .loginForm__pass--text .textFocus, body header .loginForm__pass--name .textFocus, body header .loginForm__button--text .textFocus, body header .loginForm__button--name .textFocus {
   border: solid 2px #f34343;
 }
 body header .loginForm__user--send, body header .loginForm__pass--send, body header .loginForm__button--send {
-  width: 6vw;
+  width: 100%;
   height: 3vw;
   border-radius: 13px;
   cursor: pointer;
@@ -180,6 +205,8 @@ body header .loginForm__user--send, body header .loginForm__pass--send, body hea
   background: azure;
   font-family: "Quicksand", "Courier New", Courier, monospace;
   font-weight: 600;
+  width: 100%;
+  font-size: clamp(0.3rem, 1vw, 1rem);
 }
 body header .loginForm__user--send:focus, body header .loginForm__pass--send:focus, body header .loginForm__button--send:focus {
   border: solid 2px #f34343;
@@ -191,22 +218,34 @@ body header .signinForm {
   flex-direction: column;
   align-items: center;
   gap: 0.3vw;
-  border-radius: 10px;
+  border-radius: 0.792vw;
   font-family: "Bebas Neue", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  position: relative;
-  left: 74.26vw;
-  top: -25vw;
+  position: absolute;
+  left: 76.26vw;
+  top: 8vw;
   transition: all 0.3s ease-in-out;
   visibility: hidden;
   opacity: 0;
 }
 body header .signinForm__close {
   position: relative;
-  left: -110px;
-  bottom: -5px;
+  left: -8.709vw;
+  bottom: -0.396vw;
+}
+@media screen and (max-width: 900px) and (min-width: 200px) {
+  body header .signinForm__close {
+    width: 31%;
+    left: -25px;
+    top: 0px;
+  }
 }
 body header .signinForm__close--icon .closeImageSigninForm {
   cursor: pointer;
+}
+@media screen and (max-width: 900px) and (min-width: 200px) {
+  body header .signinForm__close--icon .closeImageSigninForm {
+    width: 50%;
+  }
 }
 body header .signinForm__user, body header .signinForm__button {
   padding: 0.5vw;
@@ -214,18 +253,26 @@ body header .signinForm__user, body header .signinForm__button {
   flex-direction: column;
 }
 body header .signinForm__user--title, body header .signinForm__button--title {
+  font-size: clamp(0.5rem, 1.3vw, 3rem);
   text-align: center;
-  margin: 6px;
+  margin: 0.475vw;
 }
 body header .signinForm__user--name, body header .signinForm__button--name {
   border-radius: 5px;
   border: solid 2px #f34343;
-  margin-bottom: 12px;
+  margin-bottom: 1vw;
+  font-size: clamp(0.3rem, 1.3vw, 3rem);
+}
+@media screen and (max-width: 900px) and (min-width: 200px) {
+  body header .signinForm__user--name, body header .signinForm__button--name {
+    border: solid 1px #f34343;
+  }
 }
 body header .signinForm__user--name .textFocus, body header .signinForm__button--name .textFocus {
   border: solid 2px #f34343;
 }
 body header .signinForm__user--send, body header .signinForm__button--send {
+  font-size: clamp(0.3rem, 1vw, 1rem);
   height: 3vw;
   border-radius: 13px;
   cursor: pointer;
@@ -233,6 +280,7 @@ body header .signinForm__user--send, body header .signinForm__button--send {
   background: azure;
   font-family: "Quicksand", "Courier New", Courier, monospace;
   font-weight: 600;
+  margin: 0.5vw;
 }
 body header .signinForm__user--send:focus, body header .signinForm__button--send:focus {
   border: solid 2px #f34343;
@@ -256,6 +304,21 @@ body main .freeMovies__title--backContentMain,
 body main .showsResult__title--backContentMain {
   visibility: hidden;
 }
+@media screen and (max-width: 900px) and (min-width: 350px) {
+  body main .freeShows__title--backContentMain .backIcon,
+  body main .freeMovies__title--backContentMain .backIcon,
+  body main .showsResult__title--backContentMain .backIcon {
+    display: inline-block;
+    width: 4vw;
+  }
+}
+@media screen and (max-width: 900px) and (min-width: 350px) {
+  body main .freeShows__title--backContentMain .backIcon__image,
+  body main .freeMovies__title--backContentMain .backIcon__image,
+  body main .showsResult__title--backContentMain .backIcon__image {
+    max-width: 100%;
+  }
+}
 body main .freeShows__title h3,
 body main .freeMovies__title h3,
 body main .showsResult__title h3 {
@@ -264,10 +327,12 @@ body main .showsResult__title h3 {
   font-weight: 600;
   font-size: clamp(0.3rem, 1.8vw, 3rem);
   color: white;
+  align-content: center;
 }
 body main .freeShows__container,
 body main .freeMovies__container,
 body main .showsResult__container {
+  justify-content: flex-start;
   display: flex;
   padding: 1vw;
   overflow-y: hidden;
@@ -310,6 +375,16 @@ body main .showsResult__container--item {
   height: 20rem;
   cursor: pointer;
 }
+@media screen and (max-width: 900px) and (min-width: 200px) {
+  body main .freeShows__container--item,
+  body main .freeMovies__container--item,
+  body main .showsResult__container--item {
+    width: 33vw;
+    height: 23vw;
+    padding: 0.2vw;
+    margin: 0.2rem;
+  }
+}
 body main .freeShows__container--item:hover,
 body main .freeMovies__container--item:hover,
 body main .showsResult__container--item:hover {
@@ -333,131 +408,205 @@ body main .showsResult__container--item:hover .itemCover {
 }
 body main .freeShows__container--item .infoShow,
 body main .freeShows__container--item .infoMovies,
-body main .freeShows__container--item .infoshowsResult,
 body main .freeMovies__container--item .infoShow,
 body main .freeMovies__container--item .infoMovies,
-body main .freeMovies__container--item .infoshowsResult,
 body main .showsResult__container--item .infoShow,
-body main .showsResult__container--item .infoMovies,
-body main .showsResult__container--item .infoshowsResult {
+body main .showsResult__container--item .infoMovies {
   display: flex;
   position: relative;
   top: -20rem;
-  width: 13.125rem;
+  width: 100%;
   height: 100%;
   transition: all 0.25s ease;
   opacity: 0;
   font-family: "Quicksand", "Courier New", Courier, monospace;
   flex-direction: column;
   text-align: justify;
-  /* .infoShowActive {
-      visibility: visible;
-  } */
+}
+@media screen and (max-width: 900px) and (min-width: 200px) {
+  body main .freeShows__container--item .infoShow,
+  body main .freeShows__container--item .infoMovies,
+  body main .freeMovies__container--item .infoShow,
+  body main .freeMovies__container--item .infoMovies,
+  body main .showsResult__container--item .infoShow,
+  body main .showsResult__container--item .infoMovies {
+    top: -5.5rem;
+    width: 100%;
+  }
 }
 body main .freeShows__container--item .infoShow__name,
 body main .freeShows__container--item .infoMovies__name,
-body main .freeShows__container--item .infoshowsResult__name,
 body main .freeMovies__container--item .infoShow__name,
 body main .freeMovies__container--item .infoMovies__name,
-body main .freeMovies__container--item .infoshowsResult__name,
 body main .showsResult__container--item .infoShow__name,
-body main .showsResult__container--item .infoMovies__name,
-body main .showsResult__container--item .infoshowsResult__name {
+body main .showsResult__container--item .infoMovies__name {
+  font-size: clamp(0.4rem, 1.3vw, 2rem);
   text-align: center;
   padding: 1vw;
   color: white;
   font-style: italic;
   font-weight: 600;
 }
-body main .freeShows__container--item .infoShow__name:hover,
-body main .freeShows__container--item .infoMovies__name:hover,
-body main .freeShows__container--item .infoshowsResult__name:hover,
-body main .freeMovies__container--item .infoShow__name:hover,
-body main .freeMovies__container--item .infoMovies__name:hover,
-body main .freeMovies__container--item .infoshowsResult__name:hover,
-body main .showsResult__container--item .infoShow__name:hover,
-body main .showsResult__container--item .infoMovies__name:hover,
-body main .showsResult__container--item .infoshowsResult__name:hover {
-  text-decoration: underline;
+@media (hover: hover) {
+  body main .freeShows__container--item .infoShow__name:hover,
+  body main .freeShows__container--item .infoMovies__name:hover,
+  body main .freeMovies__container--item .infoShow__name:hover,
+  body main .freeMovies__container--item .infoMovies__name:hover,
+  body main .showsResult__container--item .infoShow__name:hover,
+  body main .showsResult__container--item .infoMovies__name:hover {
+    text-decoration: underline;
+  }
 }
 body main .freeShows__container--item .infoShow__genre,
 body main .freeShows__container--item .infoMovies__genre,
-body main .freeShows__container--item .infoshowsResult__genre,
 body main .freeMovies__container--item .infoShow__genre,
 body main .freeMovies__container--item .infoMovies__genre,
-body main .freeMovies__container--item .infoshowsResult__genre,
 body main .showsResult__container--item .infoShow__genre,
-body main .showsResult__container--item .infoMovies__genre,
+body main .showsResult__container--item .infoMovies__genre {
+  padding: 0.5vw;
+  justify-content: center;
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: clamp(0.2rem, 0.8vw, 1rem);
+}
+body main .freeShows__container--item .infoShow__summary,
+body main .freeShows__container--item .infoMovies__summary,
+body main .freeMovies__container--item .infoShow__summary,
+body main .freeMovies__container--item .infoMovies__summary,
+body main .showsResult__container--item .infoShow__summary,
+body main .showsResult__container--item .infoMovies__summary {
+  padding: 1vw;
+  color: white;
+  font-size: clamp(0.1rem, 1vw, 2rem);
+}
+body main .freeShows__container--item .infoShow__playContainer,
+body main .freeShows__container--item .infoMovies__playContainer,
+body main .freeMovies__container--item .infoShow__playContainer,
+body main .freeMovies__container--item .infoMovies__playContainer,
+body main .showsResult__container--item .infoShow__playContainer,
+body main .showsResult__container--item .infoMovies__playContainer {
+  padding: 0.8vw;
+  display: flex;
+  justify-content: center;
+  height: 5vw;
+}
+@media screen and (max-width: 900px) and (min-width: 200px) {
+  body main .freeShows__container--item .infoShow__playContainer,
+  body main .freeShows__container--item .infoMovies__playContainer,
+  body main .freeMovies__container--item .infoShow__playContainer,
+  body main .freeMovies__container--item .infoMovies__playContainer,
+  body main .showsResult__container--item .infoShow__playContainer,
+  body main .showsResult__container--item .infoMovies__playContainer {
+    height: 4vw;
+  }
+}
+body main .freeShows__container--item .infoShow__playContainer--playIcon,
+body main .freeShows__container--item .infoMovies__playContainer--playIcon,
+body main .freeMovies__container--item .infoShow__playContainer--playIcon,
+body main .freeMovies__container--item .infoMovies__playContainer--playIcon,
+body main .showsResult__container--item .infoShow__playContainer--playIcon,
+body main .showsResult__container--item .infoMovies__playContainer--playIcon {
+  height: 100%;
+  width: 3vw;
+  display: flex;
+}
+@media screen and (max-width: 900px) and (min-width: 350px) {
+  body main .freeShows__container--item .infoShow__playContainer--playIcon,
+  body main .freeShows__container--item .infoMovies__playContainer--playIcon,
+  body main .freeMovies__container--item .infoShow__playContainer--playIcon,
+  body main .freeMovies__container--item .infoMovies__playContainer--playIcon,
+  body main .showsResult__container--item .infoShow__playContainer--playIcon,
+  body main .showsResult__container--item .infoMovies__playContainer--playIcon {
+    width: 100%;
+  }
+}
+body main .freeShows__container--item .infoShow__playContainer--playIcon .playImage,
+body main .freeShows__container--item .infoMovies__playContainer--playIcon .playImage,
+body main .freeMovies__container--item .infoShow__playContainer--playIcon .playImage,
+body main .freeMovies__container--item .infoMovies__playContainer--playIcon .playImage,
+body main .showsResult__container--item .infoShow__playContainer--playIcon .playImage,
+body main .showsResult__container--item .infoMovies__playContainer--playIcon .playImage {
+  width: 8vw;
+  transition: all 0.25s ease;
+  align-self: center;
+}
+@media screen and (max-width: 900px) and (min-width: 350px) {
+  body main .freeShows__container--item .infoShow__playContainer--playIcon .playImage,
+  body main .freeShows__container--item .infoMovies__playContainer--playIcon .playImage,
+  body main .freeMovies__container--item .infoShow__playContainer--playIcon .playImage,
+  body main .freeMovies__container--item .infoMovies__playContainer--playIcon .playImage,
+  body main .showsResult__container--item .infoShow__playContainer--playIcon .playImage,
+  body main .showsResult__container--item .infoMovies__playContainer--playIcon .playImage {
+    width: 100%;
+    align-self: auto;
+  }
+}
+@media (hover: hover) {
+  body main .freeShows__container--item .infoShow__playContainer--playIcon .playImage:hover,
+  body main .freeShows__container--item .infoMovies__playContainer--playIcon .playImage:hover,
+  body main .freeMovies__container--item .infoShow__playContainer--playIcon .playImage:hover,
+  body main .freeMovies__container--item .infoMovies__playContainer--playIcon .playImage:hover,
+  body main .showsResult__container--item .infoShow__playContainer--playIcon .playImage:hover,
+  body main .showsResult__container--item .infoMovies__playContainer--playIcon .playImage:hover {
+    transform: translateY(-0.792vw);
+  }
+}
+body main .freeShows__container--item .infoshowsResult,
+body main .freeMovies__container--item .infoshowsResult,
+body main .showsResult__container--item .infoshowsResult {
+  display: flex;
+  position: relative;
+  top: -18.7rem;
+  width: 100%;
+  height: 100%;
+  transition: all 0.25s ease;
+  opacity: 0;
+  font-family: "Quicksand", "Courier New", Courier, monospace;
+  flex-direction: column;
+  text-align: justify;
+}
+@media screen and (max-width: 900px) and (min-width: 200px) {
+  body main .freeShows__container--item .infoshowsResult,
+  body main .freeMovies__container--item .infoshowsResult,
+  body main .showsResult__container--item .infoshowsResult {
+    top: -5.5rem;
+    width: 100%;
+  }
+}
+body main .freeShows__container--item .infoshowsResult__name,
+body main .freeMovies__container--item .infoshowsResult__name,
+body main .showsResult__container--item .infoshowsResult__name {
+  font-size: clamp(0.4rem, 1.3vw, 2rem);
+  text-align: center;
+  padding: 1vw;
+  color: white;
+  font-style: italic;
+  font-weight: 600;
+}
+@media (hover: hover) {
+  body main .freeShows__container--item .infoshowsResult__name:hover,
+  body main .freeMovies__container--item .infoshowsResult__name:hover,
+  body main .showsResult__container--item .infoshowsResult__name:hover {
+    text-decoration: underline;
+  }
+}
+body main .freeShows__container--item .infoshowsResult__genre,
+body main .freeMovies__container--item .infoshowsResult__genre,
 body main .showsResult__container--item .infoshowsResult__genre {
   padding: 0.5vw;
   justify-content: center;
   color: white;
   display: flex;
   flex-wrap: wrap;
-  font-size: clamp(0.5vw, 0.7rem, 0.8rem);
+  font-size: clamp(0.2rem, 0.8vw, 1rem);
 }
-body main .freeShows__container--item .infoShow__summary,
-body main .freeShows__container--item .infoMovies__summary,
 body main .freeShows__container--item .infoshowsResult__summary,
-body main .freeMovies__container--item .infoShow__summary,
-body main .freeMovies__container--item .infoMovies__summary,
 body main .freeMovies__container--item .infoshowsResult__summary,
-body main .showsResult__container--item .infoShow__summary,
-body main .showsResult__container--item .infoMovies__summary,
 body main .showsResult__container--item .infoshowsResult__summary {
   padding: 1vw;
   color: white;
-}
-body main .freeShows__container--item .infoShow__playContainer,
-body main .freeShows__container--item .infoMovies__playContainer,
-body main .freeShows__container--item .infoshowsResult__playContainer,
-body main .freeMovies__container--item .infoShow__playContainer,
-body main .freeMovies__container--item .infoMovies__playContainer,
-body main .freeMovies__container--item .infoshowsResult__playContainer,
-body main .showsResult__container--item .infoShow__playContainer,
-body main .showsResult__container--item .infoMovies__playContainer,
-body main .showsResult__container--item .infoshowsResult__playContainer {
-  padding: 0.8vw;
-  display: flex;
-  justify-content: center;
-  height: 5vw;
-}
-body main .freeShows__container--item .infoShow__playContainer--playIcon,
-body main .freeShows__container--item .infoMovies__playContainer--playIcon,
-body main .freeShows__container--item .infoshowsResult__playContainer--playIcon,
-body main .freeMovies__container--item .infoShow__playContainer--playIcon,
-body main .freeMovies__container--item .infoMovies__playContainer--playIcon,
-body main .freeMovies__container--item .infoshowsResult__playContainer--playIcon,
-body main .showsResult__container--item .infoShow__playContainer--playIcon,
-body main .showsResult__container--item .infoMovies__playContainer--playIcon,
-body main .showsResult__container--item .infoshowsResult__playContainer--playIcon {
-  height: 100%;
-  width: 3vw;
-  display: flex;
-}
-body main .freeShows__container--item .infoShow__playContainer--playIcon .playImage,
-body main .freeShows__container--item .infoMovies__playContainer--playIcon .playImage,
-body main .freeShows__container--item .infoshowsResult__playContainer--playIcon .playImage,
-body main .freeMovies__container--item .infoShow__playContainer--playIcon .playImage,
-body main .freeMovies__container--item .infoMovies__playContainer--playIcon .playImage,
-body main .freeMovies__container--item .infoshowsResult__playContainer--playIcon .playImage,
-body main .showsResult__container--item .infoShow__playContainer--playIcon .playImage,
-body main .showsResult__container--item .infoMovies__playContainer--playIcon .playImage,
-body main .showsResult__container--item .infoshowsResult__playContainer--playIcon .playImage {
-  width: 100%;
-  transition: all 0.25s ease;
-  align-self: center;
-}
-body main .freeShows__container--item .infoShow__playContainer--playIcon .playImage:hover,
-body main .freeShows__container--item .infoMovies__playContainer--playIcon .playImage:hover,
-body main .freeShows__container--item .infoshowsResult__playContainer--playIcon .playImage:hover,
-body main .freeMovies__container--item .infoShow__playContainer--playIcon .playImage:hover,
-body main .freeMovies__container--item .infoMovies__playContainer--playIcon .playImage:hover,
-body main .freeMovies__container--item .infoshowsResult__playContainer--playIcon .playImage:hover,
-body main .showsResult__container--item .infoShow__playContainer--playIcon .playImage:hover,
-body main .showsResult__container--item .infoMovies__playContainer--playIcon .playImage:hover,
-body main .showsResult__container--item .infoshowsResult__playContainer--playIcon .playImage:hover {
-  transform: translateY(-10px);
+  font-size: clamp(0.1rem, 1vw, 2rem);
 }
 body footer .legal__container {
   display: flex;
@@ -506,15 +655,49 @@ header .headerContainer__logo i img {
   width: 100%;
 }
 
-main .contentFlex .freeShows__container--item .itemCover, main .contentFlex .freeMovies__container--item .itemCover, main .contentFlex .showsResult__container--item .itemCover {
+main .contentFlex .freeShows__container--item .itemCover,
+main .contentFlex .freeMovies__container--item .itemCover,
+main .contentFlex .showsResult__container--item .itemCover {
   cursor: pointer;
-  max-width: 100%;
   transition: all 0.25s ease;
   max-height: 100%;
-  /* &:hover {
-       //scale: 110%;
-       //opacity: 0.5;
-   } */
+}
+main .showsResult__container--item .infoshowsResult__playContainer {
+  padding: 0.8vw;
+  display: flex;
+  justify-content: center;
+  height: 5vw;
+}
+@media screen and (max-width: 900px) and (min-width: 200px) {
+  main .showsResult__container--item .infoshowsResult__playContainer {
+    height: 4vw;
+  }
+}
+main .showsResult__container--item .infoshowsResult__playContainer--playIcon {
+  height: 100%;
+  width: 3vw;
+  display: flex;
+}
+@media screen and (max-width: 900px) and (min-width: 200px) {
+  main .showsResult__container--item .infoshowsResult__playContainer--playIcon {
+    width: 100%;
+  }
+}
+main .showsResult__container--item .infoshowsResult__playContainer--playIcon .playImage {
+  width: 8vw;
+  transition: all 0.25s ease;
+  align-self: center;
+}
+@media screen and (max-width: 900px) and (min-width: 350px) {
+  main .showsResult__container--item .infoshowsResult__playContainer--playIcon .playImage {
+    width: 100%;
+    align-self: auto;
+  }
+}
+@media (hover: hover) {
+  main .showsResult__container--item .infoshowsResult__playContainer--playIcon .playImage:hover {
+    transform: translateY(-0.792vw);
+  }
 }
 
 footer .legal__container--logo i {

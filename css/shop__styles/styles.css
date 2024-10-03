@@ -6,18 +6,215 @@ header .headerContainer__logo i {
 header .headerContainer__logo i img {
   width: 100%;
 }
-
-main .contentFlex .freeShows__container--item .itemCover, main .contentFlex .freeMovies__container--item .itemCover, main .contentFlex .showsResult__container--item .itemCover {
+header .headerContainer .messageSession__shoppingIcon, header .headerContainer .messageSession__logOutIcon {
+  width: 2.3vw;
+}
+header .headerContainer .messageSession__shoppingIcon--Image, header .headerContainer .messageSession__logOutIcon--Image {
+  width: 100%;
+}
+header .headerContainer .messageSession .countIcon {
+  font-size: clamp(0.3rem, 1.425vw, 3rem);
+  position: absolute;
+  border-radius: 50%;
+  right: 5.622vw;
+  top: 3.246vw;
+  background-color: #f16666;
+  width: 1.584vw;
+  padding: 1px;
+  text-align: center;
+  color: #fff;
+  font-family: "Bebas Neue", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+header .shoppingBag__close {
+  display: inline-block;
+  width: 1.979vw;
+}
+header .shoppingBag__close--image {
+  width: 100%;
   cursor: pointer;
-  width: 13.125rem;
-  transition: all 0.25s ease;
-  height: 100%;
-  /* &:hover {
-       //scale: 110%;
-       //opacity: 0.5;
-   } */
+}
+header .shoppingBag__items .bagItem__cover {
+  width: 4.688vw;
+}
+header .shoppingBag__items .bagItem__iconRemove {
+  width: 1.563vw;
+}
+header .shoppingBag__items .bagItem__iconRemove .imageRemove {
+  width: 100%;
+  cursor: pointer;
+}
+header .loginForm__close {
+  position: relative;
+  left: -8.594vw;
+  bottom: -0.391vw;
+}
+@media screen and (max-width: 900px) and (min-width: 200px) {
+  header .loginForm__close {
+    width: 31%;
+    left: -6.8vw;
+    top: 0px;
+  }
+}
+header .loginForm__close--icon .closeImage {
+  cursor: pointer;
+}
+@media screen and (max-width: 900px) and (min-width: 350px) {
+  header .loginForm__close--icon .closeImage {
+    width: 50%;
+  }
+}
+header .loginForm__button {
+  padding: 1.5vw;
+}
+header .loginForm__button--send {
+  width: 100%;
+  height: 3vw;
+  border-radius: 13px;
+  cursor: pointer;
+  border: solid 1px #d3d3d3;
+  background: azure;
+  font-family: "Quicksand", "Courier New", Courier, monospace;
+  font-weight: 600;
+  width: 100%;
+  font-size: clamp(0.3rem, 1vw, 1rem);
+}
+header .loginForm__button--send:focus {
+  border: solid 2px #f34343;
+}
+header .signinForm__close {
+  position: relative;
+  left: -8.709vw;
+  bottom: -0.396vw;
+}
+@media screen and (max-width: 900px) and (min-width: 350px) {
+  header .signinForm__close {
+    width: 31%;
+    left: -25px;
+    top: 0px;
+  }
+}
+header .signinForm__close--icon .closeImageSigninForm {
+  cursor: pointer;
+}
+@media screen and (max-width: 900px) and (min-width: 200px) {
+  header .signinForm__close--icon .closeImageSigninForm {
+    width: 50%;
+  }
+}
+header .signinForm__button {
+  align-items: center;
+  padding: 0.5vw;
+  display: flex;
+  flex-direction: column;
+}
+header .signinForm__button--send {
+  font-size: clamp(0.3rem, 1vw, 1rem);
+  height: 3vw;
+  border-radius: 13px;
+  cursor: pointer;
+  border: solid 1px #d3d3d3;
+  background: azure;
+  font-family: "Quicksand", "Courier New", Courier, monospace;
+  font-weight: 600;
+  margin: 0.5vw;
+}
+header .signinForm__button--send:focus {
+  border: solid 2px #f34343;
 }
 
+main .contentFlex__productsGrid--grid .productsGrid__item .itemCover {
+  cursor: pointer;
+  width: 16.406vw;
+  transition: all 0.25s ease;
+  height: 100%;
+  border-bottom-left-radius: 0.781vw;
+  border-top-left-radius: 0.781vw;
+}
+main .contentFlex__productsGrid--grid .productsGrid__item .infoItem__addCart--icon {
+  padding: 0.4vw;
+}
+main .contentFlex__productsGrid--grid .productsGrid__item .infoItem__addCart {
+  display: flex;
+  align-items: center;
+  width: 3vw;
+  height: 3vw;
+}
+main .contentFlex__productsGrid--grid .productsGrid__item .infoItem__addCart--icon {
+  width: 100%;
+  cursor: pointer;
+}
+main .contentFlex__productsGrid--grid .productsGrid__item .infoItem__addCart--icon .addCartImage {
+  width: 100%;
+  transition: all 0.25s ease;
+}
+main .contentFlex__productsGrid--grid .productsGrid__item .infoItem__addCart--icon .addCartImage:hover {
+  scale: 130%;
+}
+main .contentFlex .showsResult__title--backContentMain {
+  visibility: hidden;
+}
+@media screen and (max-width: 900px) and (min-width: 350px) {
+  main .contentFlex .showsResult__title--backContentMain .backIcon {
+    display: inline-block;
+    width: 4vw;
+  }
+}
+@media screen and (max-width: 900px) and (min-width: 350px) {
+  main .contentFlex .showsResult__title--backContentMain .backIcon__image {
+    max-width: 100%;
+  }
+}
+main .contentFlex .showsResult__container--item .itemCover {
+  cursor: pointer;
+  transition: all 0.25s ease;
+  max-height: 100%;
+}
+main .contentFlex .showsResult__container--item .infoshowsResult__playContainer {
+  padding: 0.8vw;
+  display: flex;
+  justify-content: center;
+  height: 5vw;
+}
+@media screen and (max-width: 900px) and (min-width: 350px) {
+  main .contentFlex .showsResult__container--item .infoshowsResult__playContainer {
+    height: 4vw;
+  }
+}
+main .contentFlex .showsResult__container--item .infoshowsResult__playContainer--playIcon {
+  height: 100%;
+  width: 3vw;
+  display: flex;
+}
+@media screen and (max-width: 900px) and (min-width: 350px) {
+  main .contentFlex .showsResult__container--item .infoshowsResult__playContainer--playIcon {
+    width: 100%;
+  }
+}
+main .contentFlex .showsResult__container--item .infoshowsResult__playContainer--playIcon .playImage {
+  width: 8vw;
+  transition: all 0.25s ease;
+  align-self: center;
+}
+@media screen and (max-width: 900px) and (min-width: 350px) {
+  main .contentFlex .showsResult__container--item .infoshowsResult__playContainer--playIcon .playImage {
+    width: 100%;
+    align-self: auto;
+  }
+}
+@media (hover: hover) {
+  main .contentFlex .showsResult__container--item .infoshowsResult__playContainer--playIcon .playImage:hover {
+    transform: translateY(-0.792vw);
+  }
+}
+
+footer .legal__container--logo {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 2vw;
+  padding: 1vw;
+  align-items: center;
+}
 footer .legal__container--logo i {
   display: inline-block;
   width: 35%;
@@ -56,8 +253,10 @@ body header .headerContainer__logo {
   transition: all 0.25s ease;
   cursor: pointer;
 }
-body header .headerContainer__logo:hover {
-  scale: 110%;
+@media (hover: hover) {
+  body header .headerContainer__logo:hover {
+    scale: 110%;
+  }
 }
 body header .headerContainer__logo h1 {
   font-family: "Bebas Neue", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
@@ -83,6 +282,7 @@ body header .headerContainer__menu ul {
   justify-content: center;
   gap: 1.5vw;
   flex: 1;
+  align-content: center;
 }
 body header .headerContainer__menu ul li {
   cursor: pointer;
@@ -131,6 +331,7 @@ body header .headerContainer__session ul {
   justify-content: space-evenly;
   gap: 1.5vw;
   flex: 1;
+  align-content: center;
 }
 body header .headerContainer__session ul li {
   cursor: pointer;
@@ -156,27 +357,8 @@ body header .headerContainer__session .messageSession {
   width: 100%;
   justify-content: space-between;
 }
-body header .headerContainer__session .messageSession__shoppingIcon, body header .headerContainer__session .messageSession__logOutIcon {
-  width: 2.3vw;
-}
-body header .headerContainer__session .messageSession__shoppingIcon--Image, body header .headerContainer__session .messageSession__logOutIcon--Image {
-  width: 100%;
-}
-body header .headerContainer__session .messageSession .countIcon {
-  font-size: 18px;
-  position: absolute;
-  border-radius: 50%;
-  right: 71px;
-  top: 41px;
-  background-color: #f16666;
-  width: 20px;
-  padding: 1px;
-  text-align: center;
-  color: #fff;
-  font-family: "Bebas Neue", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-}
 body header .shoppingBag {
-  border-radius: 10px;
+  border-radius: 0.781vw;
   background-color: #fff;
   color: #000;
   font-family: "Bebas Neue", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
@@ -184,7 +366,7 @@ body header .shoppingBag {
   position: relative;
   left: 55.8vw;
   top: -1.5vw;
-  padding: 25px;
+  padding: 1.953vw;
   box-sizing: border-box;
   box-shadow: -19px -1px 22px -15px rgba(0, 0, 0, 0.3);
   transition: all 0.25s ease-in-out;
@@ -211,22 +393,14 @@ body header .shoppingBag::-webkit-scrollbar-thumb {
 body header .shoppingBag::-webkit-scrollbar-track {
   border-radius: 20px;
 }
-body header .shoppingBag__close {
-  display: inline-block;
-  width: 1.979vw;
-}
-body header .shoppingBag__close--image {
-  width: 100%;
-  cursor: pointer;
-}
 body header .shoppingBag__title {
   width: 100%;
   text-align: center;
-  font-size: 20px;
+  font-size: clamp(0.6rem, 1.563vw, 2vw);
   font-weight: 400;
   -webkit-text-emphasis: i;
           text-emphasis: i;
-  padding: 10px 0;
+  padding: 0.781vw 0;
   box-sizing: border-box;
   margin: 0px;
   font-style: italic;
@@ -236,32 +410,25 @@ body header .shoppingBag__items .bagItem {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px;
+  padding: 1.172vw;
   box-sizing: border-box;
   flex-direction: row;
-}
-body header .shoppingBag__items .bagItem__cover {
-  width: 60px;
 }
 body header .shoppingBag__items .bagItem__title {
   text-align: center;
   margin: 0;
   width: 50%;
+  font-size: clamp(0.2rem, 1.25vw, 1rem);
 }
 body header .shoppingBag__items .bagItem__denomination {
   font-weight: 500;
   margin: 0;
+  font-size: clamp(0.2rem, 1.25vw, 1rem);
 }
 body header .shoppingBag__items .bagItem__price {
   font-weight: 500;
   margin: 0;
-}
-body header .shoppingBag__items .bagItem__iconRemove {
-  width: 20px;
-}
-body header .shoppingBag__items .bagItem__iconRemove .imageRemove {
-  width: 100%;
-  cursor: pointer;
+  font-size: clamp(0.2rem, 1.25vw, 1rem);
 }
 body header .loginForm {
   display: flex;
@@ -270,48 +437,34 @@ body header .loginForm {
   flex-direction: column;
   align-items: center;
   gap: 0.3vw;
-  border-radius: 10px;
+  border-radius: 0.792vw;
   font-family: "Bebas Neue", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  position: relative;
-  left: 63.26vw;
-  top: -25vw;
+  position: absolute;
+  left: 65.26vw;
+  top: 8vw;
   transition: all 0.3s ease-in-out;
   visibility: hidden;
   opacity: 0;
 }
-body header .loginForm__close {
-  position: relative;
-  left: -110px;
-  bottom: -5px;
-}
-body header .loginForm__close--icon .closeImage {
-  cursor: pointer;
-}
-body header .loginForm__user, body header .loginForm__pass, body header .loginForm__button {
+body header .loginForm__user, body header .loginForm__pass {
   padding: 1.5vw;
 }
-body header .loginForm__user--title, body header .loginForm__pass--title, body header .loginForm__button--title {
+body header .loginForm__user--title, body header .loginForm__pass--title {
   text-align: center;
-  margin: 6px;
+  margin: 0.475vw;
+  font-size: clamp(0.5rem, 1.3vw, 3rem);
 }
-body header .loginForm__user--text, body header .loginForm__user--name, body header .loginForm__pass--text, body header .loginForm__pass--name, body header .loginForm__button--text, body header .loginForm__button--name {
+body header .loginForm__user--text, body header .loginForm__user--name, body header .loginForm__pass--text, body header .loginForm__pass--name {
   border-radius: 5px;
   border: solid 2px #f34343;
+  font-size: clamp(0.3rem, 1.3vw, 3rem);
 }
-body header .loginForm__user--text .textFocus, body header .loginForm__user--name .textFocus, body header .loginForm__pass--text .textFocus, body header .loginForm__pass--name .textFocus, body header .loginForm__button--text .textFocus, body header .loginForm__button--name .textFocus {
-  border: solid 2px #f34343;
+@media screen and (max-width: 900px) and (min-width: 200px) {
+  body header .loginForm__user--text, body header .loginForm__user--name, body header .loginForm__pass--text, body header .loginForm__pass--name {
+    border: solid 1px #f34343;
+  }
 }
-body header .loginForm__user--send, body header .loginForm__pass--send, body header .loginForm__button--send {
-  width: 6vw;
-  height: 3vw;
-  border-radius: 13px;
-  cursor: pointer;
-  border: solid 1px #d3d3d3;
-  background: azure;
-  font-family: "Quicksand", "Courier New", Courier, monospace;
-  font-weight: 600;
-}
-body header .loginForm__user--send:focus, body header .loginForm__pass--send:focus, body header .loginForm__button--send:focus {
+body header .loginForm__user--text .textFocus, body header .loginForm__user--name .textFocus, body header .loginForm__pass--text .textFocus, body header .loginForm__pass--name .textFocus {
   border: solid 2px #f34343;
 }
 body header .signinForm {
@@ -321,50 +474,38 @@ body header .signinForm {
   flex-direction: column;
   align-items: center;
   gap: 0.3vw;
-  border-radius: 10px;
+  border-radius: 0.792vw;
   font-family: "Bebas Neue", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  position: relative;
-  left: 74.26vw;
-  top: -47.7vw;
+  position: absolute;
+  left: 76.26vw;
+  top: 8vw;
   transition: all 0.3s ease-in-out;
   visibility: hidden;
   opacity: 0;
 }
-body header .signinForm__close {
-  position: relative;
-  left: -110px;
-  bottom: -5px;
-}
-body header .signinForm__close--icon .closeImageSigninForm {
-  cursor: pointer;
-}
-body header .signinForm__user, body header .signinForm__button {
+body header .signinForm__user {
+  align-items: center;
   padding: 0.5vw;
   display: flex;
   flex-direction: column;
 }
-body header .signinForm__user--title, body header .signinForm__button--title {
+body header .signinForm__user--title {
+  font-size: clamp(0.5rem, 1.3vw, 3rem);
   text-align: center;
-  margin: 6px;
+  margin: 0.475vw;
 }
-body header .signinForm__user--name, body header .signinForm__button--name {
+body header .signinForm__user--name {
   border-radius: 5px;
   border: solid 2px #f34343;
-  margin-bottom: 12px;
+  margin-bottom: 1vw;
+  font-size: clamp(0.3rem, 1.3vw, 3rem);
 }
-body header .signinForm__user--name .textFocus, body header .signinForm__button--name .textFocus {
-  border: solid 2px #f34343;
+@media screen and (max-width: 900px) and (min-width: 200px) {
+  body header .signinForm__user--name {
+    border: solid 1px #f34343;
+  }
 }
-body header .signinForm__user--send, body header .signinForm__button--send {
-  height: 3vw;
-  border-radius: 13px;
-  cursor: pointer;
-  border: solid 1px #d3d3d3;
-  background: azure;
-  font-family: "Quicksand", "Courier New", Courier, monospace;
-  font-weight: 600;
-}
-body header .signinForm__user--send:focus, body header .signinForm__button--send:focus {
+body header .signinForm__user--name .textFocus {
   border: solid 2px #f34343;
 }
 body main .contentFlex__productsGrid--title {
@@ -379,7 +520,7 @@ body main .contentFlex__productsGrid--title h3 {
   font-family: "Quicksand", "Courier New", Courier, monospace;
   font-weight: 600;
   font-size: clamp(0.3rem, 1.8vw, 3rem);
-  color: white;
+  color: #fff;
 }
 body main .contentFlex__productsGrid--grid {
   display: grid;
@@ -397,24 +538,16 @@ body main .contentFlex__productsGrid--grid .productsGrid__item {
   color: white;
   width: calc(100% - 1vw);
 }
-body main .contentFlex__productsGrid--grid .productsGrid__item .itemCover {
-  cursor: pointer;
-  width: 13.125rem;
-  transition: all 0.25s ease;
-  height: 100%;
-  border-bottom-left-radius: 10px;
-  border-top-left-radius: 10px;
-}
 body main .contentFlex__productsGrid--grid .productsGrid__item .infoItem {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 0.792vw;
   align-items: center;
   background-color: #c55252;
   width: 100%;
-  padding: 5px;
-  border-bottom-right-radius: 10px;
-  border-top-right-radius: 10px;
+  padding: 0.396vw;
+  border-bottom-right-radius: 0.781vw;
+  border-top-right-radius: 0.781vw;
   box-shadow: inset 0px 0px 9px 2px black;
   justify-content: space-evenly;
 }
@@ -425,6 +558,7 @@ body main .contentFlex__productsGrid--grid .productsGrid__item .infoItem__title 
   font-style: italic;
   font-weight: 900;
   padding: 0.4vw;
+  font-size: clamp(0.2rem, 1.8vw, 3rem);
 }
 body main .contentFlex__productsGrid--grid .productsGrid__item .infoItem__resolution {
   width: 70%;
@@ -435,33 +569,18 @@ body main .contentFlex__productsGrid--grid .productsGrid__item .infoItem__genre 
   color: white;
   display: flex;
   flex-wrap: wrap;
-  font-size: clamp(0.5vw, 0.7rem, 0.8rem);
+  font-size: clamp(0.1rem, 1vw, 1rem);
   padding: 0.4vw;
 }
 body main .contentFlex__productsGrid--grid .productsGrid__item .infoItem__summary {
   padding: 0.4vw;
   text-align: center;
+  font-size: clamp(0.2rem, 1.3vw, 3rem);
 }
 body main .contentFlex__productsGrid--grid .productsGrid__item .infoItem__price {
   display: flex;
   font-weight: 700;
-}
-body main .contentFlex__productsGrid--grid .productsGrid__item .infoItem__addCart--icon {
-  padding: 0.4vw;
-}
-body main .contentFlex__productsGrid--grid .productsGrid__item .infoItem__addCart {
-  display: flex;
-}
-body main .contentFlex__productsGrid--grid .productsGrid__item .infoItem__addCart--icon {
-  width: 2vw;
-  cursor: pointer;
-}
-body main .contentFlex__productsGrid--grid .productsGrid__item .infoItem__addCart--icon .addCartImage {
-  width: 100%;
-  transition: all 0.25s ease;
-}
-body main .contentFlex__productsGrid--grid .productsGrid__item .infoItem__addCart--icon .addCartImage:hover {
-  scale: 130%;
+  font-size: clamp(0.3rem, 1.5vw, 3rem);
 }
 body main .contentFlex .showsResult {
   transition: all 0.25s ease;
@@ -473,17 +592,16 @@ body main .contentFlex .showsResult__title {
   display: flex;
   gap: 2vw;
 }
-body main .contentFlex .showsResult__title--backContentMain {
-  visibility: hidden;
-}
 body main .contentFlex .showsResult__title h3 {
   cursor: pointer;
   font-family: "Quicksand", "Courier New", Courier, monospace;
   font-weight: 600;
   font-size: clamp(0.3rem, 1.8vw, 3rem);
   color: white;
+  align-content: center;
 }
 body main .contentFlex .showsResult__container {
+  justify-content: flex-start;
   display: flex;
   padding: 1vw;
   overflow-y: hidden;
@@ -514,90 +632,66 @@ body main .contentFlex .showsResult__container--item {
   height: 20rem;
   cursor: pointer;
 }
+@media screen and (max-width: 900px) and (min-width: 350px) {
+  body main .contentFlex .showsResult__container--item {
+    width: 33vw;
+    height: 23vw;
+    padding: 0.2vw;
+    margin: 0.2rem;
+  }
+}
 body main .contentFlex .showsResult__container--item:hover {
   scale: 120%;
 }
-body main .contentFlex .showsResult__container--item:hover .infoShow,
-body main .contentFlex .showsResult__container--item:hover .infoMovies,
 body main .contentFlex .showsResult__container--item:hover .infoshowsResult {
   opacity: 1;
 }
 body main .contentFlex .showsResult__container--item:hover .itemCover {
   opacity: 0.2;
 }
-body main .contentFlex .showsResult__container--item .infoShow,
-body main .contentFlex .showsResult__container--item .infoMovies,
 body main .contentFlex .showsResult__container--item .infoshowsResult {
   display: flex;
   position: relative;
-  top: -20rem;
-  width: 13.125rem;
+  top: -18.7rem;
+  width: 100%;
   height: 100%;
   transition: all 0.25s ease;
   opacity: 0;
   font-family: "Quicksand", "Courier New", Courier, monospace;
   flex-direction: column;
   text-align: justify;
-  /* .infoShowActive {
-      visibility: visible;
-  } */
 }
-body main .contentFlex .showsResult__container--item .infoShow__name,
-body main .contentFlex .showsResult__container--item .infoMovies__name,
+@media screen and (max-width: 900px) and (min-width: 350px) {
+  body main .contentFlex .showsResult__container--item .infoshowsResult {
+    top: -5.5rem;
+    width: 100%;
+  }
+}
 body main .contentFlex .showsResult__container--item .infoshowsResult__name {
+  font-size: clamp(0.4rem, 1.3vw, 2rem);
   text-align: center;
   padding: 1vw;
   color: white;
   font-style: italic;
   font-weight: 600;
 }
-body main .contentFlex .showsResult__container--item .infoShow__name:hover,
-body main .contentFlex .showsResult__container--item .infoMovies__name:hover,
-body main .contentFlex .showsResult__container--item .infoshowsResult__name:hover {
-  text-decoration: underline;
+@media (hover: hover) {
+  body main .contentFlex .showsResult__container--item .infoshowsResult__name:hover {
+    text-decoration: underline;
+  }
 }
-body main .contentFlex .showsResult__container--item .infoShow__genre,
-body main .contentFlex .showsResult__container--item .infoMovies__genre,
 body main .contentFlex .showsResult__container--item .infoshowsResult__genre {
   padding: 0.5vw;
   justify-content: center;
   color: white;
   display: flex;
   flex-wrap: wrap;
-  font-size: clamp(0.5vw, 0.7rem, 0.8rem);
+  font-size: clamp(0.2rem, 0.8vw, 1rem);
 }
-body main .contentFlex .showsResult__container--item .infoShow__summary,
-body main .contentFlex .showsResult__container--item .infoMovies__summary,
 body main .contentFlex .showsResult__container--item .infoshowsResult__summary {
   padding: 1vw;
   color: white;
-}
-body main .contentFlex .showsResult__container--item .infoShow__playContainer,
-body main .contentFlex .showsResult__container--item .infoMovies__playContainer,
-body main .contentFlex .showsResult__container--item .infoshowsResult__playContainer {
-  padding: 0.8vw;
-  display: flex;
-  justify-content: center;
-  height: 5vw;
-}
-body main .contentFlex .showsResult__container--item .infoShow__playContainer--playIcon,
-body main .contentFlex .showsResult__container--item .infoMovies__playContainer--playIcon,
-body main .contentFlex .showsResult__container--item .infoshowsResult__playContainer--playIcon {
-  height: 100%;
-  width: 3vw;
-  display: flex;
-}
-body main .contentFlex .showsResult__container--item .infoShow__playContainer--playIcon .playImage,
-body main .contentFlex .showsResult__container--item .infoMovies__playContainer--playIcon .playImage,
-body main .contentFlex .showsResult__container--item .infoshowsResult__playContainer--playIcon .playImage {
-  width: 100%;
-  transition: all 0.25s ease;
-  align-self: center;
-}
-body main .contentFlex .showsResult__container--item .infoShow__playContainer--playIcon .playImage:hover,
-body main .contentFlex .showsResult__container--item .infoMovies__playContainer--playIcon .playImage:hover,
-body main .contentFlex .showsResult__container--item .infoshowsResult__playContainer--playIcon .playImage:hover {
-  transform: translateY(-10px);
+  font-size: clamp(0.1rem, 1vw, 2rem);
 }
 body main .pageNumber .pageNumber__list {
   cursor: pointer;
@@ -605,8 +699,11 @@ body main .pageNumber .pageNumber__list {
   display: flex;
   color: #fff;
   justify-content: center;
-  gap: 20px;
+  gap: 1.563vw;
   font-family: "Bebas Neue", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+body main .pageNumber .pageNumber__list li {
+  font-size: clamp(1rem, 2vw, 2rem);
 }
 body main .pageNumber .pageNumber__list li:hover {
   text-decoration: underline;
@@ -617,7 +714,7 @@ body footer .legal__container {
   margin-top: 5vw;
   font-family: "Quicksand", "Courier New", Courier, monospace;
 }
-body footer .legal__container--content, body footer .legal__container--logo {
+body footer .legal__container--content {
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -625,7 +722,7 @@ body footer .legal__container--content, body footer .legal__container--logo {
   padding: 1vw;
   align-items: center;
 }
-body footer .legal__container--content li, body footer .legal__container--logo li {
+body footer .legal__container--content li {
   cursor: pointer;
   color: #676767;
   font-size: clamp(0.5rem, 1vw, 1rem);

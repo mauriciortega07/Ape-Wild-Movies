@@ -10,8 +10,10 @@ body {
             &__logo {
                 @include headerContainerLogo;
 
-                &:hover {
-                    scale: 110%;
+                @media(hover:hover) {
+                    &:hover {
+                        scale: 110%;
+                    }
                 }
 
                 h1 {
@@ -38,9 +40,12 @@ body {
                             color: #fff;
                         }
 
-                        &:hover {
-                            text-decoration: underline;
+                        @media(hover:hover) {
+                            &:hover {
+                                text-decoration: underline;
+                            }
                         }
+
                     }
                 }
             }
@@ -68,12 +73,15 @@ body {
                         @include headerUlLiStyle(0.3rem, 1.2vw, 3rem);
                     }
 
-                    .login:hover {
-                        text-decoration: underline;
-                    }
+                    @media (hover:hover) {
+                        .login:hover {
+                            text-decoration: underline;
+                        }
 
-                    .signin:hover {
-                        text-decoration: underline;
+                        .signin:hover {
+                            text-decoration: underline;
+                        }
+
                     }
 
                 }
@@ -89,21 +97,28 @@ body {
                             width: 100%;
                         }
                     }
-                    
+
                 }
             }
         }
 
-        .loginForm{
+        .loginForm {
             @include loginForm;
 
             &__close {
                 @include loginFormClose;
 
+
+
                 &--icon {
 
                     .closeImage {
                         cursor: pointer;
+
+                        @media screen and (max-width: 900px) and (min-width: 350px) {
+                            width: 50%;
+
+                        }
                     }
                 }
             }
@@ -114,13 +129,12 @@ body {
                 padding: 1.5vw;
 
                 &--title {
-                    text-align: center;
-                    margin: 6px;
+                    @include loginFormContainerTitle;
                 }
 
-                &--text, &--name {
-                    border-radius: 5px;
-                    border: solid 2px #f34343;
+                &--text,
+                &--name {
+                    @include loginFormContainerTextName;
 
                     .textFocus {
                         border: solid 2px #f34343;
@@ -138,49 +152,28 @@ body {
         }
 
         .signinForm {
-            display: flex;
-            background-color: #fff;
-            width: 20vw;
-            flex-direction: column;
-            align-items: center;
-            gap: .3vw;
-            border-radius: 10px;
-            font-family: "Bebas Neue", 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            position: relative;
-            left: 74.26vw;
-            top: -25vw;
-            transition: all .30s ease-in-out;
-            visibility: hidden;
-            opacity: 0;
+            @include signinForm;
 
             &__close {
-                position: relative;
-                left: -110px;
-                bottom: -5px;
+                @include signinFormClose;
 
                 &--icon {
-
                     .closeImageSigninForm {
-                        cursor: pointer;
+                        @include closeImageSigninForm;
                     }
                 }
             }
 
             &__user,
             &__button {
-                padding: .5vw;
-                display: flex;
-                flex-direction: column;
+                @include signinFormUserButton;
 
                 &--title {
-                    text-align: center;
-                    margin: 6px;
+                    @include signinFormUserButtonTitle;
                 }
 
                 &--name {
-                    border-radius: 5px;
-                    border: solid 2px #f34343;
-                    margin-bottom: 12px;
+                    @include signinFormUserButtonName;
 
                     .textFocus {
                         border: solid 2px #f34343;
@@ -188,14 +181,7 @@ body {
                 }
 
                 &--send {
-                    //width: 6vw;
-                    height: 3vw;
-                    border-radius: 13px;
-                    cursor: pointer;
-                    border: solid 1px #d3d3d3;
-                    background: azure;
-                    font-family: "Quicksand", "Courier New", Courier, monospace;
-                    font-weight: 600;
+                    @include signinFormUserButtonSend;
 
                     &:focus {
                         border: solid 2px #f34343;
@@ -206,7 +192,7 @@ body {
 
     }
 
-    main {  
+    main {
 
         .freeShows,
         .freeMovies,
@@ -214,27 +200,33 @@ body {
             transition: all 0.25s ease;
 
             &__title {
-                margin-top: 4vw;
-                margin-bottom: 1vw;
-                transition: all .25s ease;
-                display: flex;
-                gap: 2vw;
+                @include freeShowsMoviesShowsResultsTitle;
 
                 &--backContentMain {
                     visibility: hidden;
+
+                    .backIcon {
+                        @media screen and (max-width: 900px) and (min-width: 350px) {
+                            display: inline-block;
+                            width: 4vw;
+                        }
+
+                        &__image {
+                            @media screen and (max-width: 900px) and (min-width: 350px) {
+                                max-width: 100%;
+                            }
+                        }
+                    }
                 }
 
                 h3 {
                     @include headerUlLiStyle(0.3rem, 1.8vw, 3rem);
+                    align-content: center;
                 }
             }
 
             &__container {
-                display: flex;
-                padding: 1vw;
-                overflow-y: hidden;
-                overflow-x: auto;
-                transition: all 0.25s ease;
+                @include freeShowsMoviesShowsResultsContainer;
 
                 &::-webkit-scrollbar {
                     -webkit-appearance: none;
@@ -260,11 +252,7 @@ body {
                 }
 
                 &--item {
-                    padding: 1vw;
-                    transition: all 0.25s ease;
-                    margin: 0.625rem;
-                    height: 20rem;
-                    cursor: pointer;
+                    @include freeShowsMoviesShowsResultsContainerItem;
 
                     &:hover {
                         scale: 120%;
@@ -281,70 +269,68 @@ body {
                     }
 
                     .infoShow,
-                    .infoMovies,
-                    .infoshowsResult {
-                        display: flex;
-                        position: relative;
-                        top: -20rem;
-                        width: 13.125rem;
-                        height: 100%;
-                        transition: all 0.25s ease;
-                        opacity: 0;
-                        font-family: "Quicksand", 'Courier New', Courier, monospace;
-                        flex-direction: column;
-                        text-align: justify;
-
-                        /* .infoShowActive {
-                            visibility: visible;
-                        } */
+                    .infoMovies {
+                        @include freeShowsMoviesShowsResultsContainerItemInfo;
 
                         &__name {
-                            text-align: center;
-                            padding: 1vw;
-                            color: #ffff;
-                            font-style: italic;
-                            font-weight: 600;
+                            @include infoMoviesShowsName;
 
-                            &:hover {
-                                text-decoration: underline;
+                            @media (hover:hover) {
+                                &:hover {
+                                    text-decoration: underline;
+                                }
+                            }
+
+                        }
+
+                        &__genre {
+                            @include infoMoviesShowsGenre;
+                        }
+
+                        &__summary {
+                            @include infoMoviesShowsSummary;
+
+                        }
+
+                        &__playContainer {
+                            @include infoMoviesShowsPlayContainer;
+
+                            &--playIcon {
+                                @include infoMoviesShowsPlayIcon;
+
+                                .playImage {
+                                    @include playIconImage;
+
+                                    @media (hover: hover) {
+                                        &:hover {
+                                            transform: translateY(-0.792vw);
+                                        }
+                                    }
+
+                                }
+                            }
+                        }
+                    }
+
+                    .infoshowsResult {
+                        @include infoShowsResult;
+
+                        &__name {
+                            @include infoShowsResultName;
+
+                            @media(hover: hover) {
+                                &:hover {
+                                    text-decoration: underline;
+                                }
                             }
                         }
 
                         &__genre {
-                            padding: .5vw;
-                            justify-content: center;
-                            color: white;
-                            display: flex;
-                            flex-wrap: wrap;
-                            font-size: clamp(.5vw, .7rem, .8rem);
+                            @include infoShowsResultGenre;
                         }
 
                         &__summary {
-                            padding: 1vw;
-                            color: #ffff;
-                        }
-
-                        &__playContainer {
-                            padding: .8vw;
-                            display: flex;
-                            justify-content: center;
-                            height: 5vw;
-
-                            &--playIcon {
-                                height: 100%;
-                                width: 3vw;
-                                display: flex;
-
-                                .playImage {
-                                    width: 100%;
-                                    transition: all 0.25s ease;
-                                    align-self: center;
-
-                                    &:hover {
-                                        transform: translateY(-10px);
-                                    }
-                                }
-                            }
+                            @include infoShowsResultSummary
                         }
                     }
 
@@ -357,25 +343,14 @@ body {
     footer {
         .legal {
             &__container {
-                display: flex;
-                padding: 2vw;
-                margin-top: 5vw;
-                font-family: "Quicksand", 'Courier New', Courier, monospace;
+                @include footerLegalContainer;
 
                 &--content,
                 &--logo {
-                    display: flex;
-                    flex-direction: column;
-                    flex: 1;
-                    gap: 2vw;
-                    padding: 1vw;
-                    align-items: center;
+                    @include containerContentLogo;
 
                     li {
-                        cursor: pointer;
-                        color: #676767;
-                        font-size: clamp(0.5rem, 1vw, 1rem);
-                        font-weight: 600;
+                        @include listItem;
                     }
                 }
 

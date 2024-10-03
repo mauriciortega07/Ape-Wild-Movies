@@ -5,7 +5,7 @@ header {
                 display: inline-block;
                 width: 15%;
                 margin-left: .6vw;
-                
+
                 img {
                     width: 100%;
                 }
@@ -16,23 +16,47 @@ header {
 
 main {
     .contentFlex {
-        .freeShows, .freeMovies, .showsResult {
+
+        .freeShows,
+        .freeMovies,
+        .showsResult {
             &__container {
                 &--item {
                     .itemCover {
                         cursor: pointer;
-                        //width: 13.125rem;
-                        max-width: 100%;
                         transition: all 0.25s ease;
                         max-height: 100%;
-
-                       /* &:hover {
-                            //scale: 110%;
-                            //opacity: 0.5;
-                        } */ 
-
                     }
                 }
+            }
+        }
+    }
+
+    .showsResult {
+        &__container {
+            &--item {
+                .infoshowsResult {
+                    &__playContainer {
+                        @include infoShowsResultPlayContainer;
+
+                        &--playIcon {
+                            @include playContainerIcon;
+
+                            .playImage {
+                                @include playContainerIconImage;
+
+                                @media(hover: hover) {
+                                    &:hover {
+                                        transform: translateY(-0.792vw);
+                                    }
+                                }
+
+
+                            }
+                        }
+                    }
+                }
+
             }
         }
     }

@@ -545,6 +545,7 @@ const createItemBag = boton => {
         
             //EVENTO PARA ELIMINAR UN ARTICULO DE LA BOLSA DE COMPRAS
             deleteImage.addEventListener("click", () => {
+            
             const itemParent = deleteImage.parentElement.parentElement;
             itemParent.remove();
 
@@ -615,8 +616,8 @@ const loadItemsRent = async () => {
                 } else {
                     //SE CREA EL ITEM EN LA BOLSA DE COMPRAS
                     for (let i = 0; i < 1; i++){
-                        
                         createItemBag(boton);
+                        alert("Se ha agregado un articulo a la bolsa de compras");
                     }
                 }
             });
@@ -693,7 +694,7 @@ const loadItemsRentPage2 = async () => {
                 } else {
                     //SE CREA EL ITEM EN LA BOLSA DE COMPRAS
                     for (let i = 0; i < 1; i++){
-                        
+                        alert("Se ha agregado un articulo a la bolsa de compras");
                         createItemBag(boton);
                     }
                 }
@@ -765,7 +766,7 @@ const loadItemsRentPage3 = async () => {
                 } else {
                     //SE CREA EL ITEM EN LA BOLSA DE COMPRAS
                     for (let i = 0; i < 1; i++){
-                        
+                        alert("Se ha agregado un articulo a la bolsa de compras");
                         createItemBag(boton);
                     }
                 }

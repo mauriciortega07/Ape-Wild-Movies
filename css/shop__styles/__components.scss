@@ -2,12 +2,102 @@ header {
     .headerContainer {
         &__logo {
             i {
-                display: inline-block;
-                width: 15%;
-                margin-left: .6vw;
-                
+                @include headerLogoIcon;
+
                 img {
                     width: 100%;
+                }
+            }
+        }
+
+        .messageSession {
+
+            &__shoppingIcon,
+            &__logOutIcon {
+                width: 2.3vw;
+
+                &--Image {
+                    width: 100%;
+                }
+            }
+
+            .countIcon {
+                @include countIcon;
+            }
+        }
+    }
+
+    .shoppingBag {
+
+        &__close {
+            @include shoppingBagClose;
+
+            &--image {
+                @include shoppingBagCloseImage;
+            }
+        }
+
+        &__items {
+            .bagItem {
+                &__cover {
+                    @include bagItemCover;
+                }
+
+                &__iconRemove {
+                    @include bagIconRemove;
+
+                    .imageRemove {
+                        @include bagImageRemove;
+                    }
+                }
+            }
+        }
+    }
+
+    .loginForm {
+        &__close {
+            @include loginFormClose;
+
+            &--icon {
+                .closeImage {
+                    @include loginFormCloseImage;
+                }
+            }
+        }
+
+        &__button {
+            @include loginButton;
+
+            &--send {
+                @include loginButtonSend;
+
+                &:focus {
+                    border: solid 2px #f34343;
+                }
+            }
+        }
+    }
+
+    .signinForm {
+        &__close {
+            @include signinFormClose;
+
+            &--icon {
+
+                .closeImageSigninForm {
+                    @include closeImageSigninForm;
+                }
+            }
+        }
+
+        &__button {
+            @include signinButton;
+
+            &--send {
+                @include siginButtonSend;
+
+                &:focus {
+                    border: solid 2px #f34343;
                 }
             }
         }
@@ -17,41 +107,106 @@ header {
 
 main {
     .contentFlex {
-        .freeShows, .freeMovies, .showsResult {
-            &__container {
-                &--item {
+
+        &__productsGrid {
+            &--grid {
+                .productsGrid__item {
                     .itemCover {
-                        cursor: pointer;
-                        width: 13.125rem;
-                        transition: all 0.25s ease;
-                        height: 100%;
+                        @include productsGridItemCover;
+                    }
 
-                       /* &:hover {
-                            //scale: 110%;
-                            //opacity: 0.5;
-                        } */ 
+                    .infoItem {
+                        &__addCart--icon {
+                            @include infoItemAddCartIcon;
+                        }
 
+                        &__addCart {
+                            @include infoItemAddCart;
+
+                            &--icon {
+                                width: 100%;
+                                cursor: pointer;
+
+                                .addCartImage {
+                                    @include addCartImage;
+
+                                    &:hover {
+                                        scale: 130%;
+                                    }
+                                }
+
+                            }
+                        }
                     }
                 }
             }
         }
+
+
+        .showsResult {
+            &__title {
+                &--backContentMain {
+                    visibility: hidden;
+
+                    .backIcon {
+                        @include showsResultBackIcon;
+
+                        &__image {
+                            @include showsResultBackIconImage;
+                        }
+                    }
+                }
+            }
+
+            &__container {
+                &--item {
+                    .itemCover {
+                        @include showsResultContainerItemCover;
+                    }
+
+                    .infoshowsResult {
+                        &__playContainer {
+                            @include infoshowsResultPlayContainer;
+
+                            &--playIcon {
+                                @include playContainerPlayIcon;
+
+                                .playImage {
+                                    @include playContainerPlayImage;
+
+                                    @media (hover: hover) {
+                                        &:hover {
+                                            transform: translateY(-0.792vw);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
     }
+
 }
 
 footer {
     .legal {
         &__container {
             &--logo {
+                @include footerLegalLogo;
+
                 i {
-                    display: inline-block;
-                    width: 35%;
-                    align-self: flex-end;
+                    @include footerLegalLogoIcon;
 
                     img {
-                        width: 100%;
+                        @include footerLegalLogoIconImage;
                     }
                 }
             }
+
+
         }
     }
 }

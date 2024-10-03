@@ -103,7 +103,7 @@
     flex-direction: column;
     align-items: center;
     gap: .3vw;
-    border-radius: 10px;
+    border-radius: 0.792vw;
     font-family: "Bebas Neue", 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     position: relative;
     left: 63.26vw;
@@ -117,15 +117,318 @@
     position: relative;
     left: -8.709vw;
     bottom: -0.396vw;
+
+    @media screen and (max-width: 900px) and (min-width: 200px) {
+        width: 31%;
+        left: -25px;
+        top: 0px
+    }
 }
 
 @mixin loginFormButtonSend {
-    width: 6vw;
+    width: 100%;
     height: 3vw;
     border-radius: 13px;
     cursor: pointer;
     border: solid 1px #d3d3d3;
     background: azure;
     font-family: "Quicksand", "Courier New", Courier, monospace;
+    font-weight: 600;
+    width: 100%;
+    font-size: clamp(0.3rem, 1vw, 1rem);
+}
+
+@mixin loginFormContainerTitle {
+    text-align: center;
+    margin: 0.475vw;
+    font-size: clamp(0.5rem, 1.3vw, 3rem);
+}
+
+@mixin loginFormContainerTextName {
+    border-radius: 5px;
+    border: solid 2px #f34343;
+    font-size: clamp(0.3rem, 1.3vw, 3rem);
+
+    @media screen and (max-width: 900px) and (min-width: 200px) {
+        border: solid 1px #f34343;
+    }
+}
+
+@mixin signinForm {
+    display: flex;
+    background-color: #fff;
+    width: 20vw;
+    flex-direction: column;
+    align-items: center;
+    gap: .3vw;
+    border-radius: 0.792vw;
+    font-family: "Bebas Neue", 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: absolute;
+    left: 76.26vw; //74.26vw;
+    top: 8vw; //-25vw;
+    transition: all .30s ease-in-out;
+    visibility: hidden;
+    opacity: 0;
+}
+
+@mixin signinFormClose {
+    position: relative;
+    left: -8.709vw;
+    bottom: -0.396vw;
+
+    @media screen and (max-width: 900px) and (min-width: 200px) {
+        width: 31%;
+        left: -25px;
+        top: 0px
+    }
+}
+
+@mixin closeImageSigninForm {
+    cursor: pointer;
+
+    @media screen and (max-width: 900px) and (min-width: 200px) {
+        width: 50%;
+
+    }
+}
+
+@mixin signinFormUserButton {
+    padding: .5vw;
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin signinFormUserButtonTitle {
+    font-size: clamp(0.5rem, 1.3vw, 3rem);
+    text-align: center;
+    margin: 0.475vw;
+}
+
+@mixin signinFormUserButtonName {
+    border-radius: 5px;
+    border: solid 2px #f34343;
+    margin-bottom: 1vw;
+    font-size: clamp(0.3rem, 1.3vw, 3rem);
+
+    @media screen and (max-width: 900px) and (min-width: 200px) {
+        border: solid 1px #f34343;
+    }
+}
+
+@mixin signinFormUserButtonSend {
+    font-size: clamp(0.3rem, 1vw, 1rem);
+    height: 3vw;
+    border-radius: 13px;
+    cursor: pointer;
+    border: solid 1px #d3d3d3;
+    background: azure;
+    font-family: "Quicksand", "Courier New", Courier, monospace;
+    font-weight: 600;
+    margin: .5vw;
+}
+
+@mixin freeShowsMoviesShowsResultsTitle {
+    margin-top: 4vw;
+    margin-bottom: 1vw;
+    transition: all .25s ease;
+    display: flex;
+    gap: 2vw;
+}
+
+@mixin freeShowsMoviesShowsResultsContainer {
+    justify-content: flex-start;
+    display: flex;
+    padding: 1vw;
+    overflow-y: hidden;
+    overflow-x: auto;
+    transition: all 0.25s ease;
+}
+
+@mixin freeShowsMoviesShowsResultsContainerItem {
+    padding: 1vw;
+    transition: all 0.25s ease;
+    margin: 0.625rem;
+    height: 20rem;
+    cursor: pointer;
+
+    @media screen and (max-width: 900px) and (min-width: 200px) {
+        width: 33vw;
+        height: 23vw;
+        padding: 0.2vw;
+        margin: 0.2rem;
+    }
+}
+
+@mixin freeShowsMoviesShowsResultsContainerItemInfo {
+    display: flex;
+    position: relative;
+    top: -20rem;
+    width: 100%;
+    height: 100%;
+    transition: all 0.25s ease;
+    opacity: 0;
+    font-family: "Quicksand", 'Courier New', Courier, monospace;
+    flex-direction: column;
+    text-align: justify;
+
+    @media screen and (max-width: 900px) and (min-width: 200px) {
+        top: -5.5rem;
+        width: 100%;
+    }
+}
+
+@mixin infoMoviesShowsName {
+    font-size: clamp(0.4rem, 1.3vw, 2rem);
+    text-align: center;
+    padding: 1vw;
+    color: #ffff;
+    font-style: italic;
+    font-weight: 600;
+}
+
+@mixin infoMoviesShowsGenre {
+    padding: .5vw;
+    justify-content: center;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: clamp(.2rem, .8vw, 1rem);
+}
+
+@mixin infoMoviesShowsSummary {
+    padding: 1vw;
+    color: #ffff;
+    font-size: clamp(.1rem, 1vw, 2rem);
+}
+
+@mixin infoMoviesShowsPlayContainer {
+    padding: .8vw;
+    display: flex;
+    justify-content: center;
+    height: 5vw;
+
+    @media screen and (max-width: 900px) and (min-width: 200px) {
+        height: 4vw;
+
+    }
+}
+
+@mixin infoMoviesShowsPlayIcon {
+    height: 100%;
+    width: 3vw;
+    display: flex;
+
+    @media screen and (max-width: 900px) and (min-width: 350px) {
+        width: 100%;
+    }
+}
+
+@mixin playIconImage {
+    width: 8vw;
+    transition: all 0.25s ease;
+    align-self: center;
+
+    @media screen and (max-width: 900px) and (min-width: 350px) {
+        width: 100%;
+        align-self: auto;
+    }
+}
+
+@mixin infoShowsResult {
+    display: flex;
+    position: relative;
+    top: -18.7rem;
+    width: 100%;
+    height: 100%;
+    transition: all 0.25s ease;
+    opacity: 0;
+    font-family: "Quicksand", 'Courier New', Courier, monospace;
+    flex-direction: column;
+    text-align: justify;
+
+    @media screen and (max-width: 900px) and (min-width: 200px) {
+        top: -5.5rem;
+        width: 100%;
+
+    }
+}
+
+@mixin infoShowsResultName {
+    font-size: clamp(0.4rem, 1.3vw, 2rem);
+    text-align: center;
+    padding: 1vw;
+    color: #ffff;
+    font-style: italic;
+    font-weight: 600;
+}
+
+@mixin infoShowsResultGenre {
+    padding: .5vw;
+    justify-content: center;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: clamp(.2rem, .8vw, 1rem);
+}
+
+@mixin infoShowsResultSummary {
+    padding: 1vw;
+    color: #ffff;
+    font-size: clamp(.1rem, 1vw, 2rem);
+}
+
+@mixin infoShowsResultPlayContainer {
+    padding: .8vw;
+    display: flex;
+    justify-content: center;
+    height: 5vw;
+
+    @media screen and (max-width: 900px) and (min-width: 200px) {
+        height: 4vw;
+
+    }
+}
+
+@mixin playContainerIcon {
+    height: 100%;
+    width: 3vw;
+    display: flex;
+
+    @media screen and (max-width: 900px) and (min-width: 200px) {
+        width: 100%;
+    }
+}
+
+@mixin playContainerIconImage {
+    width: 8vw;
+    transition: all 0.25s ease;
+    align-self: center;
+
+    @media screen and (max-width: 900px) and (min-width: 350px) {
+        width: 100%;
+        align-self: auto;
+    }
+}
+
+@mixin footerLegalContainer {
+    display: flex;
+    padding: 2vw;
+    margin-top: 5vw;
+    font-family: "Quicksand", 'Courier New', Courier, monospace;
+}
+
+@mixin containerContentLogo {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 2vw;
+    padding: 1vw;
+    align-items: center;
+}
+
+@mixin listItem {
+    cursor: pointer;
+    color: #676767;
+    font-size: clamp(0.5rem, 1vw, 1rem);
     font-weight: 600;
 }
