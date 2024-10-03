@@ -506,9 +506,9 @@
 
 @mixin countIcon {
     font-size: clamp(0.3rem, 1.425vw, 3rem);
-    position: absolute;
+    position: fixed;
     border-radius: 50%;
-    right: 5.622vw;
+    right: 7vw;
     top: 3.246vw;
     background-color: #f16666;
     width: 1.584vw;
