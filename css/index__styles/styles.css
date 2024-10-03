@@ -80,6 +80,7 @@ body header .headerContainer__search {
   box-sizing: border-box;
 }
 body header .headerContainer__search #searchText {
+  color: #fff;
   border-radius: 50px;
   padding: 7%;
   width: 100%;
@@ -465,7 +466,7 @@ body main .showsResult__container--item .infoShow__genre,
 body main .showsResult__container--item .infoMovies__genre {
   padding: 0.5vw;
   justify-content: center;
-  color: white;
+  color: #fff;
   display: flex;
   flex-wrap: wrap;
   font-size: clamp(0.2rem, 0.8vw, 1rem);
@@ -596,7 +597,7 @@ body main .freeMovies__container--item .infoshowsResult__genre,
 body main .showsResult__container--item .infoshowsResult__genre {
   padding: 0.5vw;
   justify-content: center;
-  color: white;
+  color: #fff;
   display: flex;
   flex-wrap: wrap;
   font-size: clamp(0.2rem, 0.8vw, 1rem);
