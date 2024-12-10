@@ -576,11 +576,11 @@ const createItemBag = boton => {
 /*------OBTIENE RESPUESTA DE LA API PARA ACCEDER A LA CONFIGURACION DE LA URL BASE DE LAS IMAGENES-------*/
 const loadItemsRent = async () => {
     try {
-        const responseConfig = await axios.get("https://api.themoviedb.org/3/configuration?api_key=9ccb1e5ad211eb690aa7441e5b39bef2");
+        const responseConfig = await axios.get("https://api.themoviedb.org/3/configuration?api_key=8d0e650b453a0edce7ce2e100a1efac9");
         const urlBase = `${responseConfig.data.images.base_url}${responseConfig.data.images.backdrop_sizes[3]}`;
 /*------OBTIENE RESPUESTA DE LA API PARA ACCEDER A LAS PELICULAS-------*/
         try {
-            const responseItemsRent = await axios.get("https://api.themoviedb.org/3/movie/popular?api_key=9ccb1e5ad211eb690aa7441e5b39bef2", {params: {language: 'es-MX', page:'1'}});
+            const responseItemsRent = await axios.get("https://api.themoviedb.org/3/movie/popular?api_key=8d0e650b453a0edce7ce2e100a1efac9", {params: {language: 'es-MX', page:'1'}});
             //console.log(responseItemsRent);
             const itemsRent = responseItemsRent.data.results;
             //console.log(itemsRent);
@@ -654,11 +654,11 @@ pageOne.addEventListener("click", ()=>{
 
 const loadItemsRentPage2 = async () => {
     try {
-        const responseConfig = await axios.get("https://api.themoviedb.org/3/configuration?api_key=9ccb1e5ad211eb690aa7441e5b39bef2");
+        const responseConfig = await axios.get("https://api.themoviedb.org/3/configuration?api_key=8d0e650b453a0edce7ce2e100a1efac9");
         const urlBase = `${responseConfig.data.images.base_url}${responseConfig.data.images.backdrop_sizes[3]}`;
 /*------OBTIENE RESPUESTA DE LA API PARA ACCEDER A LAS PELICULAS-------*/
         try {
-            const responseItemsRent = await axios.get("https://api.themoviedb.org/3/movie/popular?api_key=9ccb1e5ad211eb690aa7441e5b39bef2", {params: {language: 'es-MX', page:'2'}});
+            const responseItemsRent = await axios.get("https://api.themoviedb.org/3/movie/popular?api_key=8d0e650b453a0edce7ce2e100a1efac9", {params: {language: 'es-MX', page:'2'}});
             //console.log(responseItemsRent);
             const itemsRent = responseItemsRent.data.results;
             //console.log(itemsRent);
@@ -726,11 +726,11 @@ pageTwo.addEventListener("click", () => {
 
 const loadItemsRentPage3 = async () => {
     try {
-        const responseConfig = await axios.get("https://api.themoviedb.org/3/configuration?api_key=9ccb1e5ad211eb690aa7441e5b39bef2");
+        const responseConfig = await axios.get("https://api.themoviedb.org/3/configuration?api_key=8d0e650b453a0edce7ce2e100a1efac9");
         const urlBase = `${responseConfig.data.images.base_url}${responseConfig.data.images.backdrop_sizes[3]}`;
 /*------OBTIENE RESPUESTA DE LA API PARA ACCEDER A LAS PELICULAS-------*/
         try {
-            const responseItemsRent = await axios.get("https://api.themoviedb.org/3/movie/popular?api_key=9ccb1e5ad211eb690aa7441e5b39bef2", {params: {language: 'es-MX', page:'3'}});
+            const responseItemsRent = await axios.get("https://api.themoviedb.org/3/movie/popular?api_key=8d0e650b453a0edce7ce2e100a1efac9", {params: {language: 'es-MX', page:'3'}});
             //console.log(responseItemsRent);
             const itemsRent = responseItemsRent.data.results;
             //console.log(itemsRent);

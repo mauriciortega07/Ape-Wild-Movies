@@ -548,7 +548,7 @@ document.addEventListener("DOMContentLoaded", loadShows);
 
 const loadConfiguration = () => {
     return new Promise((resolve, reject) => {
-        const response = axios.get('https://api.themoviedb.org/3/configuration?api_key=9ccb1e5ad211eb690aa7441e5b39bef2');
+        const response = axios.get('https://api.themoviedb.org/3/configuration?api_key=8d0e650b453a0edce7ce2e100a1efac9');
         resolve(response);
         reject("error al obtener la ruta de las portadas");
     });
@@ -561,7 +561,7 @@ el objeto que contiene los datos de cada pelicula */
 
 const loadTopMovies = () => {
     return new Promise((resolve, reject) => {
-        const response = axios.get('https://api.themoviedb.org/3/movie/top_rated?api_key=9ccb1e5ad211eb690aa7441e5b39bef2');
+        const response = axios.get('https://api.themoviedb.org/3/movie/top_rated?api_key=8d0e650b453a0edce7ce2e100a1efac9');
         resolve(response);
         reject("error al cargar las portadas");
     });
